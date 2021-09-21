@@ -12,7 +12,7 @@ import { Usuario } from '../../../models/usuario';
 export class LoginComponent implements OnInit {
 
   login: FormGroup;
-
+  loading = false;
   constructor(private fb: FormBuilder, private toastr: ToastrService, private router: Router) { 
     this.login = this.fb.group({
       usuario: ['', Validators.required],
@@ -31,13 +31,19 @@ export class LoginComponent implements OnInit {
       password: this.login.value.password
     }
 
-    if(usuario.nombreUsuario === 'wayaruro' && usuario.password === '1234'){
-      this.login.reset();
-      this.router.navigate(['/dashboard']);
-    }else{
-      this.toastr.error('Usuario o contraseña incorrecta','Error');
-      this.login.reset();
-    }
+
+
+    this.loading = true;
+    setTimeout(()=>{
+      if(usuario.nombreUsuario === 'wayaruro' && usuario.password === '1234'){
+        this.login.reset();
+        this.router.navigate(['/dashboard']);
+      }else{
+        this.toastr.error('Usuario o contraseña incorrecta','Error');
+        this.login.reset();
+      }
+      this.loading = false;
+    },3000);
     console.log(usuario);
   }
 

@@ -19,6 +19,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CambiarPasswordComponent } from './components/dashboard/cambiar-password/cambiar-password.component';
 import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
 import { ProductosComponent } from './components/dashboard/productos/productos.component';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProductosComponent } from './components/dashboard/productos/productos.c
     DashboardComponent,
     CambiarPasswordComponent,
     NavbarComponent,
-    ProductosComponent
+    ProductosComponent,
+    LoadingComponent
     
   ],
   imports: [
