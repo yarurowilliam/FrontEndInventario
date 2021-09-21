@@ -30,6 +30,8 @@ export class RegisterComponent implements OnInit {
   }
 
   registrarUsuario(): void{
+
+
     console.log(this.register);
 
     const usuario: Usuario ={
@@ -38,18 +40,20 @@ export class RegisterComponent implements OnInit {
     };
     
     this.loading = true;
-    this.usuarioService.saveUser(usuario).subscribe(data => {
-      console.log(data);
-      this.toastr.success('El usuario ' + usuario.nombreUsuario + ' fue registrado con exito!', 'Usuario Registrado!');
-      this.router.navigate(['/inicio/login']);
-      this.loading = false;
-    }, error => {
-      this.loading = false;
-      console.log(error);
-      this.toastr.error(error.error.message, 'Error!');
-      this.register.reset();
+    setTimeout(()=>{
+      this.usuarioService.saveUser(usuario).subscribe(data => {
+        console.log(data);
+        this.toastr.success('El usuario ' + usuario.nombreUsuario + ' fue registrado con exito!', 'Usuario Registrado!');
+        this.router.navigate(['/inicio/login']);
+        this.loading = false;
+      }, error => {
+        this.loading = false;
+        console.log(error);
+        this.toastr.error(error.error.message, 'Error!');
+        this.register.reset();
 
-    });
+      });
+   },3000);
   }
 
   checkPassword(group: FormGroup): any{

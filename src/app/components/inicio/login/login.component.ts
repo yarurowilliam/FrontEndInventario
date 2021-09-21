@@ -28,21 +28,24 @@ export class LoginComponent implements OnInit {
   }
 
   log(): void{
-    const usuario: Usuario = {
-      nombreUsuario: this.login.value.usuario,
-      password: this.login.value.password
-    };
     this.loading = true;
-    this.loginService.login(usuario).subscribe(data => {
-      console.log(data);
-      this.loading = false;
-      this.loginService.setLocalStorage(data.usuario);
-      this.router.navigate(['/dashboard']);
-    }, error => {
-      console.log(error);
-      this.loading = false;
-      this.toastr.error(error.error.message, 'Error');
-      this.login.reset();
-    });
+    setTimeout(()=>{
+      const usuario: Usuario = {
+        nombreUsuario: this.login.value.usuario,
+        password: this.login.value.password
+      };
+      this.loading = true;
+      this.loginService.login(usuario).subscribe(data => {
+        console.log(data);
+        this.loading = false;
+        this.loginService.setLocalStorage(data.usuario);
+        this.router.navigate(['/dashboard']);
+      }, error => {
+        console.log(error);
+        this.loading = false;
+        this.toastr.error(error.error.message, 'Error');
+        this.login.reset();
+      });
+    },3000);
   }
 }
