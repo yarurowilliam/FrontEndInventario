@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Usuario } from '../models/usuario';
+import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root'
@@ -21,14 +22,20 @@ export class LoginService {
   }
 
   setLocalStorage(data): void {
-    localStorage.setItem('nombreUsuario', data);
+    localStorage.setItem('token', data);
   }
-
+/*
   getNombreUsuario(): string{
     return localStorage.getItem('nombreUsuario');
   }
-
+*/
   removeLocalStorge(): void {
-    localStorage.removeItem('nombreUsuario');
+    localStorage.removeItem('token');
+  }
+
+  getTokenDecoded(): any{
+    const helper = new JwtHelperService();
+    const decodedToken = helper.decodeToken(localStorage.getItem('token'));
+    return decodedToken;
   }
 }
