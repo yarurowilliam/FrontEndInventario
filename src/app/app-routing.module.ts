@@ -8,7 +8,8 @@ const routes: Routes = [
   { path:'',redirectTo: '/bienvenidos' , pathMatch: 'full' },
   { path: 'bienvenidos',component: BienvenidaComponent },
   { path: 'register',component: RegisterComponent },
-  { path: 'login', component:LoginComponent }
+  { path: 'login', component:LoginComponent },
+  { path: '**', redirectTo: '/bienvenidos', pathMatch: 'full'}
 ];
 
 @NgModule({
