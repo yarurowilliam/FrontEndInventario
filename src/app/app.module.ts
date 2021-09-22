@@ -22,6 +22,11 @@ import { CambiarPasswordComponent } from './components/dashboard/cambiar-passwor
 import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
 import { ProductosComponent } from './components/dashboard/productos/productos.component';
 import { LoadingComponent } from './shared/loading/loading.component';
+import { NuevoProductoComponent } from './components/dashboard/productos/nuevo-producto/nuevo-producto.component';
+import { ProveedoresComponent } from './components/dashboard/proveedores/proveedores.component';
+import { NuevoProveedorComponent } from './components/dashboard/proveedores/nuevo-proveedor/nuevo-proveedor.component';
+import { CategoriasComponent } from './components/dashboard/categorias/categorias.component';
+import { NuevaCategoriaComponent } from './components/dashboard/categorias/nueva-categoria/nueva-categoria.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,12 @@ import { LoadingComponent } from './shared/loading/loading.component';
     CambiarPasswordComponent,
     NavbarComponent,
     ProductosComponent,
-    LoadingComponent
+    LoadingComponent,
+    NuevoProductoComponent,
+    ProveedoresComponent,
+    NuevoProveedorComponent,
+    CategoriasComponent,
+    NuevaCategoriaComponent
     
   ],
   imports: [
