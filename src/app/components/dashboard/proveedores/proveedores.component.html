@@ -1,2 +1,23 @@
-
-<p>proveedores works!</p>
+<div class="jumbotron text-center">
+    <h1>Lista de proveedores!</h1>
+    <p class="lead text-muted">PROVEEDOR</p>
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <button class="btn btn-success btn-block btn-cues" routerLink="/dashboard/nuevoProveedor">NUEVO PROVEEDOR</button>
+        </div>
+    </div>
+</div>
+<div class="text-center" style="margin-top: -30px;">
+    <app-loading *ngIf="loading"></app-loading>
+</div>
+<div class="card-columns mt-3">
+    <div class="card bg-light" *ngFor="let proveedor of listProvedores">
+        <div class="card-body text-center">
+            <h4 class="card-title">{{ proveedor.razonSocial }}</h4>
+            <p class="card-text">Nit: {{ proveedor.nit }}</p>
+            <button class="btn btn-success radius" routerLink="/dashboard/verCuestionario/{{ proveedor.nit }}">VER</button>
+            <button class="btn btn-danger radius" (click)="eliminarProveedor(proveedor.nit)">ELIMINAR</button>
+        </div>
+    </div> 
+</div>
+<h3 *ngIf="listProvedores.length == 0 && loading == false">No hay proveedores para mostrar</h3>

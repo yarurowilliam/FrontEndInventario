@@ -47,7 +47,7 @@ export class NuevoProveedorComponent implements OnInit {
       this.proveedorService.guardarProveedor(proveedor).subscribe(data => {
         console.log(data);
         this.toastr.success('El proveedor ' + proveedor.razonSocial + ' fue registrado con exito!', 'Proveedor Registrado!');
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard/proveedores']);
         this.loading = false;
       }, error => {
         this.loading = false;

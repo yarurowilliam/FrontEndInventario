@@ -27,6 +27,8 @@ import { ProveedoresComponent } from './components/dashboard/proveedores/proveed
 import { NuevoProveedorComponent } from './components/dashboard/proveedores/nuevo-proveedor/nuevo-proveedor.component';
 import { CategoriasComponent } from './components/dashboard/categorias/categorias.component';
 import { NuevaCategoriaComponent } from './components/dashboard/categorias/nueva-categoria/nueva-categoria.component';
+import { CategoriaComponent } from './components/dashboard/categorias/categoria/categoria.component';
+import { ProveedorComponent } from './components/dashboard/proveedores/proveedor/proveedor.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { NuevaCategoriaComponent } from './components/dashboard/categorias/nueva
     ProveedoresComponent,
     NuevoProveedorComponent,
     CategoriasComponent,
-    NuevaCategoriaComponent
+    NuevaCategoriaComponent,
+    CategoriaComponent,
+    ProveedorComponent
     
   ],
   imports: [
