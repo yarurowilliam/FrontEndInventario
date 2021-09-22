@@ -1,1 +1,19 @@
-<p>proveedor works!</p>
+<div class="text-center">
+    <app-loading *ngIf="loading"></app-loading>
+</div>
+
+<div class="text-center" *ngIf="!loading">
+    <h4 class="card-title">{{ proveedor.razonSocial | uppercase }}</h4>
+    <p class="card-text">Nit: {{ proveedor.nit | uppercase }}</p>
+    <hr>
+    <p class="card-text">Direccion: {{ proveedor.direccion | uppercase }}</p>
+    <p class="card-text">Nombre Encargado: {{ proveedor.nombreEnc | uppercase }}</p>
+    <p class="card-text">Telefono Encargado: {{ proveedor.telefono | uppercase }}</p>
+    <p class="card-text">Email Proveedor: {{ proveedor.email | uppercase }}</p>
+    <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+            <button class="btn btn-info btn-lg btn-block" routerLink="/dashboard/proveedores">Volver</button>
+        </div>
+    </div>
+    <br>
+</div>

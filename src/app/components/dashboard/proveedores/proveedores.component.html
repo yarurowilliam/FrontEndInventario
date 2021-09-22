@@ -15,7 +15,7 @@
         <div class="card-body text-center">
             <h4 class="card-title">{{ proveedor.razonSocial }}</h4>
             <p class="card-text">Nit: {{ proveedor.nit }}</p>
-            <button class="btn btn-success radius" routerLink="/dashboard/verCuestionario/{{ proveedor.nit }}">VER</button>
+            <button class="btn btn-success radius" routerLink="/dashboard/verProveedor/{{ proveedor.nit }}">VER</button>
             <button class="btn btn-danger radius" (click)="eliminarProveedor(proveedor.nit)">ELIMINAR</button>
         </div>
     </div> 

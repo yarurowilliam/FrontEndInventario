@@ -29,7 +29,7 @@ export class ProveedorService {
     return this.http.delete(this.myAppUrl + this.myApiUrl + nitProveedor);
   }
 
-  getCuestionario(nitProveedor: string): Observable<any>{
+  getProveedor(nitProveedor: string): Observable<any>{
     return this.http.get(this.myAppUrl + this.myApiUrl + nitProveedor);
   }
 
