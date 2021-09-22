@@ -1,6 +1,9 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CambiarPasswordComponent } from './components/dashboard/cambiar-password/cambiar-password.component';
+import { CategoriaComponent } from './components/dashboard/categorias/categoria/categoria.component';
+import { CategoriasComponent } from './components/dashboard/categorias/categorias.component';
+import { NuevaCategoriaComponent } from './components/dashboard/categorias/nueva-categoria/nueva-categoria.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProductosComponent } from './components/dashboard/productos/productos.component';
 import { NuevoProveedorComponent } from './components/dashboard/proveedores/nuevo-proveedor/nuevo-proveedor.component';
@@ -23,7 +26,10 @@ const routes: Routes = [
     { path: 'cambiarPassword', component: CambiarPasswordComponent },
     { path: 'verProveedor/:nit', component: ProveedorComponent},
     { path: 'proveedores' , component: ProveedoresComponent },
-    { path: 'nuevoProveedor' , component: NuevoProveedorComponent}
+    { path: 'nuevoProveedor' , component: NuevoProveedorComponent},
+    { path: 'verCategoria/:id', component: CategoriaComponent},
+    { path: 'categorias', component: CategoriasComponent},
+    { path: 'nuevaCategoria', component: NuevaCategoriaComponent }
   ]},
   { path: '**', redirectTo: '/inicio', pathMatch: 'full'}
 ];
