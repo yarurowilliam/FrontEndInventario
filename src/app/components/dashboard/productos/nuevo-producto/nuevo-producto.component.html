@@ -1,1 +1,62 @@
-<p>nuevo-producto works!</p>
+<div class="row">
+    <div class="col-lg-6 offset-lg-3">
+        <h3 class="text-center">
+            Registrar Articulo
+        </h3>
+        <app-loading *ngIf="loading"></app-loading>
+        <form [formGroup]="datosArticulos" (ngSubmit)="registrarArticulo()">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Ingrese referencia del articulo" formControlName="referencia">
+                <span class="text-danger ml-3" 
+                    *ngIf="datosArticulos.get('referencia').hasError('required') && datosArticulos.get('referencia').touched">
+                    La referencia <strong>es requerida</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Ingrese nombre del articulo" formControlName="nombre">
+                <span class="text-danger ml-3" 
+                    *ngIf="datosArticulos.get('nombre').hasError('required') && datosArticulos.get('nombre').touched">
+                    El nombre <strong>es requerido</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" placeholder="Ingrese la cantidad del articulo" formControlName="cantidad">
+                <span class="text-danger ml-3" 
+                    *ngIf="datosArticulos.get('cantidad').hasError('required') && datosArticulos.get('cantidad').touched">
+                    La cantidad <strong>es requerida</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" placeholder="Ingrese el precio del articulo" formControlName="precio">
+                <span class="text-danger ml-3" 
+                    *ngIf="datosArticulos.get('precio').hasError('required') && datosArticulos.get('precio').touched">
+                    El precio del articulo <strong>es requerido</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <strong>Categoria:</strong>
+                <select formControlName="categoriaId" class="form-control">
+                    <option *ngFor="let categoria of listCategoria" value="{{categoria.id}}">{{categoria.nombreCategoria}}</option>
+                </select>
+                <span class="text-danger ml-3" 
+                    *ngIf="datosArticulos.get('categoriaId').hasError('required') && datosArticulos.get('categoriaId').touched">
+                    La categoria <strong>es requerida</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <strong>Proveedor:</strong>
+                <select formControlName="proveedorNit" class="form-control">
+                    <option *ngFor="let proveedor of listProvedores" value="{{proveedor.nit}}">{{proveedor.razonSocial}}</option>
+                </select>
+                <span class="text-danger ml-3" 
+                    *ngIf="datosArticulos.get('proveedorNit').hasError('required') && datosArticulos.get('proveedorNit').touched">
+                    El proveedor <strong>es requerido</strong>
+                </span>
+            </div>
+            <div class="col text-center">
+                <button class="btn btn-primary mr-2 btn-acep"  [disabled]="datosArticulos.invalid">Aceptar</button>
+                <button class="btn btn-secondary" routerLink="/dashboard">Volver</button>
+            </div>
+        </form>
+    </div>
+</div>

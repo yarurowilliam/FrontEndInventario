@@ -1,9 +1,23 @@
 <div class="jumbotron text-center">
     <h1>Bienvenido {{ nombreUsuario }}!</h1>
-    <p class="lead text-muted">PRODUCTOS</p>
+    <p class="lead text-muted">ARTICULOS</p>
     <div class="row">
         <div class="col-lg-6 offset-lg-3">
-            <button class="btn btn-success btn-block btn-cues">NUEVO PRODUCTO</button>
+            <button class="btn btn-success btn-block btn-cues" routerLink="/dashboard/nuevoArticulo">NUEVO ARTICULO</button>
         </div>
     </div>
 </div>
+<div class="text-center" style="margin-top: -30px;">
+    <app-loading *ngIf="loading"></app-loading>
+</div>
+<div class="card-columns mt-3">
+    <div class="card bg-light" *ngFor="let articulo of listArticulos">
+        <div class="card-body text-center">
+            <h4 class="card-title">{{ articulo.nombre }}</h4> REF: {{articulo.referencia}}
+            <p class="card-text"><strong>Stock:</strong> {{ articulo.cantidad }}</p>
+            <button class="btn btn-success radius" routerLink="/dashboard/verArticulo/{{ articulo.referencia }}">VER</button>
+            <button class="btn btn-danger radius" (click)="eliminarArticulo(articulo.referencia)">ELIMINAR</button>
+        </div>
+    </div> 
+</div>
+<h3 *ngIf="listArticulos.length == 0 && loading == false">No hay articulos para mostrar</h3>

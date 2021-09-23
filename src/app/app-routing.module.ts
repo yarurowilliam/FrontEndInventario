@@ -5,6 +5,8 @@ import { CategoriaComponent } from './components/dashboard/categorias/categoria/
 import { CategoriasComponent } from './components/dashboard/categorias/categorias.component';
 import { NuevaCategoriaComponent } from './components/dashboard/categorias/nueva-categoria/nueva-categoria.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NuevoProductoComponent } from './components/dashboard/productos/nuevo-producto/nuevo-producto.component';
+import { ProductoComponent } from './components/dashboard/productos/producto/producto.component';
 import { ProductosComponent } from './components/dashboard/productos/productos.component';
 import { NuevoProveedorComponent } from './components/dashboard/proveedores/nuevo-proveedor/nuevo-proveedor.component';
 import { ProveedorComponent } from './components/dashboard/proveedores/proveedor/proveedor.component';
@@ -29,7 +31,9 @@ const routes: Routes = [
     { path: 'nuevoProveedor' , component: NuevoProveedorComponent},
     { path: 'verCategoria/:id', component: CategoriaComponent},
     { path: 'categorias', component: CategoriasComponent},
-    { path: 'nuevaCategoria', component: NuevaCategoriaComponent }
+    { path: 'nuevaCategoria', component: NuevaCategoriaComponent },
+    { path: 'verArticulo/:referencia', component: ProductoComponent},
+    { path: 'nuevoArticulo', component: NuevoProductoComponent}
   ]},
   { path: '**', redirectTo: '/inicio', pathMatch: 'full'}
 ];
