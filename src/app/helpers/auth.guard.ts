@@ -12,16 +12,22 @@ export class AuthGuard implements CanActivate {
     
   }
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  canActivate(route: ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    
     
       if(this.loginService.getToken()==null){
         console.log('Ruta protegida');
         this.router.navigate(['/']);
+        return false;
+      }else{
+        if (route.data!=null && route.data.role!=null)
+        {
+            return this.loginService.hasRole(route.data.role);
+        }
+        return true;
       }
 
-      return true;
+      
   }
   
 }

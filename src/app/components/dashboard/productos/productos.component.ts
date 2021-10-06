@@ -12,6 +12,7 @@ export class ProductosComponent implements OnInit {
   listArticulos: Articulo[] = [];
   loading = false;
   nombreUsuario: string;
+  rolU: string;
 
   constructor(private loginService: LoginService,
     private articuloService: ArticuloService,
@@ -24,6 +25,7 @@ export class ProductosComponent implements OnInit {
 
   getNombreUsuario(): void{
     this.nombreUsuario = this.loginService.getTokenDecoded().sub;
+    this.rolU = this.loginService.getTokenDecoded().sid;
   }
 
 
@@ -48,7 +50,7 @@ export class ProductosComponent implements OnInit {
         this.getArticulos();
       }, error => {
         this.loading = false;
-        //this.toastr.error('Opss.. ocurrio un error', 'Error');
+        this.toastr.error('Opss.. ocurrio un error', 'Error');
       });
     }
   }

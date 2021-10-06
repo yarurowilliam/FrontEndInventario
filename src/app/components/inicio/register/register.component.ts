@@ -36,6 +36,7 @@ export class RegisterComponent implements OnInit {
 
     const usuario: Usuario ={
       nombreUsuario: this.register.value.usuario,
+      rolUser: "ADMINISTRADOR",
       password: this.register.value.password
     };
     

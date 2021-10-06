@@ -25,7 +25,7 @@ const routes: Routes = [
     { path: 'register',component: RegisterComponent },
     { path: 'login', component:LoginComponent }
   ]},
-  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard] ,children: [
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard],data: { role: 'ADMINISTRADOR' } ,children: [
     { path: '', component: ProductosComponent},
     { path: 'cambiarPassword', component: CambiarPasswordComponent },
     { path: 'verProveedor/:nit', component: ProveedorComponent},

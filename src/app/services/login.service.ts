@@ -24,11 +24,7 @@ export class LoginService {
   setLocalStorage(data): void {
     localStorage.setItem('token', data);
   }
-/*
-  getNombreUsuario(): string{
-    return localStorage.getItem('nombreUsuario');
-  }
-*/
+
   removeLocalStorge(): void {
     localStorage.removeItem('token');
   }
@@ -42,4 +38,19 @@ export class LoginService {
   getToken(): string{
     return localStorage.getItem('token');
   }
+
+  hasRole(rol: string): boolean {
+    let roles: string[]
+    if(this.getTokenDecoded().sid=="ADMINISTRADOR"){
+      roles =["ADMINISTRADOR"];
+      return roles.indexOf(rol) >= 0;
+    }else if(this.getTokenDecoded().sid=="EMPLEADO"){
+        roles = ["EMPLEADO"];
+        return roles.indexOf(rol) >= 0;
+    }else{
+      return false;
+    }
+  }
+
+
 }

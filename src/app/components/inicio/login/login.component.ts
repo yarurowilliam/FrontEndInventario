@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
     setTimeout(()=>{
       const usuario: Usuario = {
         nombreUsuario: this.login.value.usuario,
+        rolUser: "ADMINISTRADOR",
         password: this.login.value.password
       };
       this.loading = true;
