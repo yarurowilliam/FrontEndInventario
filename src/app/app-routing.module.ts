@@ -15,6 +15,8 @@ import { BienvenidaComponent } from './components/inicio/bienvenida/bienvenida.c
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/inicio/login/login.component';
 import { RegisterComponent } from './components/inicio/register/register.component';
+//Guards
+import { AuthGuard } from './helpers/auth.guard';
 
 const routes: Routes = [
   { path:'',redirectTo: '/inicio' , pathMatch: 'full' },
@@ -23,7 +25,7 @@ const routes: Routes = [
     { path: 'register',component: RegisterComponent },
     { path: 'login', component:LoginComponent }
   ]},
-  { path: 'dashboard', component: DashboardComponent, children: [
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard] ,children: [
     { path: '', component: ProductosComponent},
     { path: 'cambiarPassword', component: CambiarPasswordComponent },
     { path: 'verProveedor/:nit', component: ProveedorComponent},

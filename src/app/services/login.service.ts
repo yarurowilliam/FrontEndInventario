@@ -38,4 +38,8 @@ export class LoginService {
     const decodedToken = helper.decodeToken(localStorage.getItem('token'));
     return decodedToken;
   }
+
+  getToken(): string{
+    return localStorage.getItem('token');
+  }
 }

@@ -48,10 +48,15 @@ export class ProductosComponent implements OnInit {
         this.getArticulos();
       }, error => {
         this.loading = false;
-        this.toastr.error('Opss.. ocurrio un error', 'Error');
+        //this.toastr.error('Opss.. ocurrio un error', 'Error');
       });
     }
   }
+
+  anuncio(): void{
+    this.toastr.info('Ventas en construccion', 'ESTAMOS TRABAJANDO!');
+  }
+
 
 
 }

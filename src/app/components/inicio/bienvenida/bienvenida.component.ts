@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-bienvenida',
   templateUrl: './bienvenida.component.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BienvenidaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
   ngOnInit(): void {
+  }
+
+  anuncio(): void{
+    this.toastr.info('Ventas en construccion', 'ESTAMOS TRABAJANDO!');
   }
 
 }
