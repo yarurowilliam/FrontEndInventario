@@ -2,8 +2,11 @@
     <div class="row" style="width: 100%;">
         <div class="col-lg-6 offset-lg-3">
             <div class="card text-center" style="padding: 20px;">
-                <h3>Login</h3>
+                <h3>Login Inventario</h3>
                 <app-loading *ngIf="loading"></app-loading>
+                <div class="alert alert-info">
+                    <strong>¡Informacion!</strong> ¡Este ingreso dependera del rol que eliga!
+                </div>
                 <form [formGroup]="login" (ngSubmit)=log() style="padding-top: 10px;">
                     <div class="form-group" style="text-align: start;">
                         <input type="text" class="form-control" placeholder="Usuario" formControlName="usuario">
@@ -19,10 +22,22 @@
                             La contraseña <strong>es requerida</strong>
                         </span>
                     </div>
+                    <div class="form-group"  style="text-align: start;">
+                        <strong>CARGO:</strong>
+                        <select formControlName="rolUser" class="form-control">
+                            <option value="ADMINISTRADOR">ADMINISTRADOR</option>
+                            <option value="EMPLEADO">EMPLEADO</option>
+                        </select>
+                        <span class="text-danger ml-3" 
+                            *ngIf="login.get('rolUser').hasError('required') && login.get('rolUser').touched">
+                            El rol <strong>es requerido</strong>
+                        </span>
+                    </div>
                     <div class="form-group">
                         <button class="btn btn-primary mr-2 btn-login" [disabled]="login.invalid" type="submit">Aceptar</button>
                         <button class="btn btn-secondary" routerLink="/inicio">Volver</button>
                     </div>
+
                     <div class="form-group">
                         <a style="color: rgb(21, 155, 199); cursor: pointer;" routerLink="/inicio/register">Crear Cuenta</a>
                     </div>

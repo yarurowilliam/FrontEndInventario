@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
               private loginService: LoginService) {
     this.login = this.fb.group({
       usuario: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      rolUser: ['', Validators.required]
     });
   }
 
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
     setTimeout(()=>{
       const usuario: Usuario = {
         nombreUsuario: this.login.value.usuario,
-        rolUser: "ADMINISTRADOR",
+        rolUser: this.login.value.rolUser,
         password: this.login.value.password
       };
       this.loading = true;
@@ -41,7 +42,11 @@ export class LoginComponent implements OnInit {
         this.loading = false;
         this.loginService.setLocalStorage(data.token);
         this.toastr.success('Ingreso fue exitoso, bienvenido ' + usuario.nombreUsuario , 'Operacion exitosa!');
-        this.router.navigate(['/dashboard']);
+        if(usuario.rolUser == "ADMINISTRADOR"){
+          this.router.navigate(['/dashboard']);
+        }else{
+          this.router.navigate(['/ventas']);
+        }
       }, error => {
         console.log(error);
         this.loading = false;

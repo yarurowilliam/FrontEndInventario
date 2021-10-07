@@ -15,6 +15,7 @@ import { BienvenidaComponent } from './components/inicio/bienvenida/bienvenida.c
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/inicio/login/login.component';
 import { RegisterComponent } from './components/inicio/register/register.component';
+import { VentasComponent } from './components/ventas/ventas.component';
 //Guards
 import { AuthGuard } from './helpers/auth.guard';
 
@@ -37,6 +38,7 @@ const routes: Routes = [
     { path: 'verArticulo/:referencia', component: ProductoComponent},
     { path: 'nuevoArticulo', component: NuevoProductoComponent}
   ]},
+  { path: 'ventas', component: VentasComponent, canActivate:[AuthGuard]},
   { path: '**', redirectTo: '/inicio', pathMatch: 'full'}
 ];
 
