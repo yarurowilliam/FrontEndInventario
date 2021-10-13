@@ -15,6 +15,9 @@ import { BienvenidaComponent } from './components/inicio/bienvenida/bienvenida.c
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/inicio/login/login.component';
 import { RegisterComponent } from './components/inicio/register/register.component';
+import { CajaComponent } from './components/ventas/caja/caja.component';
+import { ClienteComponent } from './components/ventas/cliente/cliente.component';
+import { NuevoClienteComponent } from './components/ventas/cliente/nuevo-cliente/nuevo-cliente.component';
 import { VentasComponent } from './components/ventas/ventas.component';
 //Guards
 import { AuthGuard } from './helpers/auth.guard';
@@ -38,7 +41,10 @@ const routes: Routes = [
     { path: 'verArticulo/:referencia', component: ProductoComponent},
     { path: 'nuevoArticulo', component: NuevoProductoComponent}
   ]},
-  { path: 'ventas', component: VentasComponent, canActivate:[AuthGuard]},
+  { path: 'ventas', component: VentasComponent, canActivate:[AuthGuard], children: [
+    {path: '', component: CajaComponent},
+    {path: 'nuevoCliente', component: NuevoClienteComponent}
+  ]},
   { path: '**', redirectTo: '/inicio', pathMatch: 'full'}
 ];
 

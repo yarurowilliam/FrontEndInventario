@@ -31,6 +31,10 @@ import { CategoriaComponent } from './components/dashboard/categorias/categoria/
 import { ProveedorComponent } from './components/dashboard/proveedores/proveedor/proveedor.component';
 import { ProductoComponent } from './components/dashboard/productos/producto/producto.component';
 import { VentasComponent } from './components/ventas/ventas.component';
+import { SidebarComponent } from './components/ventas/sidebar/sidebar.component';
+import { CajaComponent } from './components/ventas/caja/caja.component';
+import { ClienteComponent } from './components/ventas/cliente/cliente.component';
+import { NuevoClienteComponent } from './components/ventas/cliente/nuevo-cliente/nuevo-cliente.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,11 @@ import { VentasComponent } from './components/ventas/ventas.component';
     CategoriaComponent,
     ProveedorComponent,
     ProductoComponent,
-    VentasComponent    
+    VentasComponent,
+    SidebarComponent,
+    CajaComponent,
+    ClienteComponent,
+    NuevoClienteComponent    
   ],
   imports: [
     BrowserModule,
