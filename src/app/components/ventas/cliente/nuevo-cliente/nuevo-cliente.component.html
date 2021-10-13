@@ -1,1 +1,56 @@
-<p>nuevo-cliente works!</p>
+<div class="row">
+    <div class="col-lg-6 offset-lg-3">
+        <h3 class="text-center">
+            Registrar Cliente
+        </h3>
+        <app-loading *ngIf="loading"></app-loading>
+        <form [formGroup]="datosClientes" (ngSubmit)="registrarCliente()">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Ingrese la identificacion del cliente" formControlName="identificacion">
+                <span class="text-danger ml-3" 
+                    *ngIf="datosClientes.get('identificacion').hasError('required') && datosClientes.get('identificacion').touched">
+                    La identificacion del cliente <strong>es requerida</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Ingrese el nombre del cliente" formControlName="nombre">
+                <span class="text-danger ml-3" 
+                    *ngIf="datosClientes.get('nombre').hasError('required') && datosClientes.get('nombre').touched">
+                    El nombre del cliente <strong>es requerido</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Ingrese el apellido del cliente" formControlName="apellido">
+                <span class="text-danger ml-3" 
+                    *ngIf="datosClientes.get('apellido').hasError('required') && datosClientes.get('apellido').touched">
+                    El apellido del cliente <strong>es requerido</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Ingrese la direccion del cliente" formControlName="direccion">
+                <span class="text-danger ml-3" 
+                    *ngIf="datosClientes.get('direccion').hasError('required') && datosClientes.get('direccion').touched">
+                    La direccion del cliente <strong>es requerida</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Ingrese el telefono del cliente" formControlName="telefono">
+                <span class="text-danger ml-3" 
+                    *ngIf="datosClientes.get('telefono').hasError('required') && datosClientes.get('telefono').touched">
+                    El telefono del cliente <strong>es requerido</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Ingrese el email del cliente" formControlName="email">
+                <span class="text-danger ml-3" 
+                    *ngIf="datosClientes.get('email').hasError('required') && datosClientes.get('email').touched">
+                    El email del cliente <strong>es requerido</strong>
+                </span>
+            </div>
+            <div class="col text-center">
+                <button class="btn btn-primary mr-2 btn-acep"  [disabled]="datosClientes.invalid">Aceptar</button>
+                <button class="btn btn-secondary" routerLink="/ventas">Volver</button>
+            </div>
+        </form>
+    </div>
+</div>
