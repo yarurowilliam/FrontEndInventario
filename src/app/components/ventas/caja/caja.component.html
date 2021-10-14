@@ -1,1 +1,89 @@
-<p>caja works!</p>
+<div class="panel panel-primary"
+style="width: auto; margin:auto; margin-top: auto; background-color: rgba(255, 255, 255, 0.8)">
+<div class="panel-heading" style="background-color: lightblue;color: white;">CAJA DE VENTAS</div>
+<div class="panel-body">
+    <div class="row separar">
+        <div class="col-sm-12">
+            <hr class="bg-info">
+            <div class="alert alert-warning">
+                <strong>¡Alerta!</strong> Todos los campos son obligatorios!
+            </div>
+            <hr class="bg-info">
+            <app-loading *ngIf="loading"></app-loading>
+            <form [formGroup]="datosVenta" >
+                <h3 class="text-center">
+                    DATOS DEL CLIENTE
+                </h3>
+                <div class="row separar">
+                    <div class="col-sm-2">
+                        <label>Identificacion:</label>
+                    </div>
+                    <div class="col-sm-4">             
+                            <input type="text" class="form-control" placeholder="Ingrese numero de documento" formControlName="identificacion">
+                            <span class="text-danger ml-3" 
+                                *ngIf="datosVenta.get('identificacion').hasError('required') && datosVenta.get('identificacion').touched">
+                                La identificacion <strong>es requerido</strong>
+                            </span>         
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="btn btn-success" type="button" (click)="buscar()">Buscar</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>Nombre del cliente:</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="Consulte la informacion" formControlName="nombre" readonly="readonly">
+                        <span class="text-danger ml-3" 
+                            *ngIf="datosVenta.get('nombre').hasError('required') && datosVenta.get('nombre').touched">
+                            El nombre es <strong>es requerido</strong>
+                        </span>
+                    </div>
+                </div>
+                <hr class="bg-info">
+                <div class="col text-center">
+                    <button class="btn btn-primary mr-2 btn-acep"  [disabled]="datosVenta.invalid">Aceptar</button>
+                </div>
+            </form>
+                <div class="row separar">
+                    <div class="col-sm-6">
+                        <div style="overflow-x:auto;">
+                            <h3 class="text-center">
+                                LISTA DE PRODUCTOS
+                                <div class="col-12">
+                                    <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="CONSULTAR REFERENCIA O NOMBRE">
+                                </div>
+                               
+                            </h3>
+
+                            <table class='table table-dark table-hover' *ngIf='listArticulos && listArticulos.length'>
+                                <thead>
+                                    <tr>
+                                    <tr>
+                                        <th>REFERENCIA</th>           
+                                        <th>NOMBRE</th>
+                                        <th>CANTIDAD</th>
+                                        <th>PRECIO</th>
+                                        <th>LLEVAR</th>
+                                        <th>AGREGAR</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let articulo of listArticulos | filtroVentasc:searchText;">                
+                                    <td>{{articulo.referencia}}</td>
+                                    <td>{{articulo.nombre}}</td>
+                                    <td>{{articulo.cantidad}}</td>
+                                    <td>{{articulo.precio}}</td>
+                                    <td><input type="number" class="form-control" ></td>
+                                    <td><button class="btn btn-success mr-2 btn-success">AGREGAR</button></td>
+                                </tr>
+                            </tbody>
+                            </table>
+                            </div>
+                    </div>
+                </div>
+
+
+        </div>
+    </div>
+</div>
+</div>

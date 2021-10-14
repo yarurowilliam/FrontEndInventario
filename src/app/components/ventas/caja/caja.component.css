@@ -1,0 +1,33 @@
+.jumbotron {
+    background-color: white;
+}
+
+.btn-cues{
+    padding: 1rem 2rem;
+    border-radius: 300px;
+}
+
+.radius {
+    width: 100px;
+    border-radius: 300px;
+    margin-left: 10px;
+}
+.separar {
+    padding: 5px;
+}
+
+.botonesayuda {
+    padding: 5px;
+    text-align: center;
+}
+
+.panel-heading {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.textomod {
+    text-align: center;
+    font-weight: bold;
+}

@@ -8,7 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
-
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
  //INTERCEPTORS
 import { AddTokenInterceptor } from '../app/helpers/add-token.interceptor';
 // Componentes
@@ -35,6 +36,7 @@ import { SidebarComponent } from './components/ventas/sidebar/sidebar.component'
 import { CajaComponent } from './components/ventas/caja/caja.component';
 import { ClienteComponent } from './components/ventas/cliente/cliente.component';
 import { NuevoClienteComponent } from './components/ventas/cliente/nuevo-cliente/nuevo-cliente.component';
+import { FiltroVentascPipe } from './pipe/filtro-ventasc.pipe';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,8 @@ import { NuevoClienteComponent } from './components/ventas/cliente/nuevo-cliente
     SidebarComponent,
     CajaComponent,
     ClienteComponent,
-    NuevoClienteComponent    
+    NuevoClienteComponent,
+    FiltroVentascPipe    
   ],
   imports: [
     BrowserModule,
@@ -68,7 +71,9 @@ import { NuevoClienteComponent } from './components/ventas/cliente/nuevo-cliente
     ReactiveFormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true }],
   bootstrap: [AppComponent]
