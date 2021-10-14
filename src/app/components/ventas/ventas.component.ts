@@ -12,4 +12,5 @@ export class VentasComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
 }
