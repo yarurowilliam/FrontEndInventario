@@ -27,4 +27,13 @@ export class ArticuloService {
   deleteArticulo(referencia: string): Observable<any> {
     return this.http.delete(this.myAppUrl + this.myApiUrl + referencia);
   }
+
+  getArticulo(referencia: string): Observable<any>{
+    return this.http.get(this.myAppUrl + this.myApiUrl + referencia);
+  }
+
+  updateCantidad(articulo: Articulo): Observable<any> {
+    return this.http.put(this.myAppUrl + this.myApiUrl + articulo.referencia, articulo);
+  }
+
 }

@@ -37,6 +37,9 @@ import { CajaComponent } from './components/ventas/caja/caja.component';
 import { ClienteComponent } from './components/ventas/cliente/cliente.component';
 import { NuevoClienteComponent } from './components/ventas/cliente/nuevo-cliente/nuevo-cliente.component';
 import { FiltroVentascPipe } from './pipe/filtro-ventasc.pipe';
+import { ListaArticulosComponent } from './components/ventas/caja/lista-articulos/lista-articulos.component';
+import { NuestrasVentasComponent } from './components/ventas/nuestras-ventas/nuestras-ventas.component';
+import { DetallesVentasComponent } from './components/ventas/nuestras-ventas/detalles-ventas/detalles-ventas.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,10 @@ import { FiltroVentascPipe } from './pipe/filtro-ventasc.pipe';
     CajaComponent,
     ClienteComponent,
     NuevoClienteComponent,
-    FiltroVentascPipe    
+    FiltroVentascPipe,
+    ListaArticulosComponent,
+    NuestrasVentasComponent,
+    DetallesVentasComponent    
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,8 @@ import { CategoriaComponent } from './components/dashboard/categorias/categoria/
 import { CategoriasComponent } from './components/dashboard/categorias/categorias.component';
 import { NuevaCategoriaComponent } from './components/dashboard/categorias/nueva-categoria/nueva-categoria.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DetallesVentasComponent } from './components/ventas/nuestras-ventas/detalles-ventas/detalles-ventas.component';
+import { NuestrasVentasComponent } from './components/ventas/nuestras-ventas/nuestras-ventas.component';
 import { NuevoProductoComponent } from './components/dashboard/productos/nuevo-producto/nuevo-producto.component';
 import { ProductoComponent } from './components/dashboard/productos/producto/producto.component';
 import { ProductosComponent } from './components/dashboard/productos/productos.component';
@@ -42,8 +44,10 @@ const routes: Routes = [
     { path: 'nuevoArticulo', component: NuevoProductoComponent}
   ]},
   { path: 'ventas', component: VentasComponent, canActivate:[AuthGuard], children: [
-    {path: '', component: CajaComponent},
-    {path: 'nuevoCliente', component: NuevoClienteComponent}
+    { path: '', component: CajaComponent},
+    { path: 'nuevoCliente', component: NuevoClienteComponent},
+    { path: 'listaVentas', component: NuestrasVentasComponent},
+    { path: 'verDetallesVenta/:id', component: DetallesVentasComponent}
   ]},
   { path: '**', redirectTo: '/inicio', pathMatch: 'full'}
 ];
