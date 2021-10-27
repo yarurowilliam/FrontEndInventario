@@ -11,6 +11,8 @@ import { ProveedorService } from 'src/app/services/proveedor.service';
 export class ProveedoresComponent implements OnInit {
   listProvedores: Proveedor[] = [];
   loading = false;
+  page = 1;
+  pageSize = 6;
   
   constructor(private proveedorService: ProveedorService,
     private toastr: ToastrService) { }
