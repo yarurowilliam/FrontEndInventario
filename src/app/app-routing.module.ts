@@ -29,7 +29,7 @@ const routes: Routes = [
     { path: 'register',component: RegisterComponent },
     { path: 'login', component:LoginComponent }
   ]},
-  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard],data: { role: 'ADMINISTRADOR' } ,children: [
+  { path: 'dashboard', component: DashboardComponent, /*canActivate:[AuthGuard],data: { role: 'ADMINISTRADOR' } ,*/children: [
     { path: '', component: ProductosComponent},
     { path: 'cambiarPassword', component: CambiarPasswordComponent },
     { path: 'verProveedor/:nit', component: ProveedorComponent},
@@ -41,7 +41,7 @@ const routes: Routes = [
     { path: 'verArticulo/:referencia', component: ProductoComponent},
     { path: 'nuevoArticulo', component: NuevoProductoComponent}
   ]},
-  { path: 'ventas', component: VentasComponent, canActivate:[AuthGuard], children: [
+  { path: 'ventas', component: VentasComponent, /*canActivate:[AuthGuard],*/ children: [
     {path: '', component: CajaComponent},
     {path: 'nuevoCliente', component: NuevoClienteComponent}
   ]},
