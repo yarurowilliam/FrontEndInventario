@@ -1,16 +1,11 @@
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white shadow barra">
-  <a class="navbar-brand" href="#">
-    <img src="./assets/img/logo.png" alt="">
-  </a>
-    <h5 class="my-0 mr-md-auto font-weight-normal"></h5>  
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Inventario</h5>  
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 label" routerLink="/ventas" routerLinkActive="active-link">Ventas</a>
-      <a class="p-2 label" routerLink="/dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" >Productos</a>
-      <a class="p-2 label" routerLink="/dashboard/proveedores" routerLinkActive="active-link">Proveedores</a>
-      <a class="p-2 label" routerLink="/dashboard/categorias" routerLinkActive="active-link">Categorias</a>
-      <a class="p-2 label" routerLink="/dashboard/cambiarPassword" routerLinkActive="active-link">Cambiar Password</a>
+      <a class="btn btn-lg btn-primary" routerLink="/ventas">Area de Ventas</a>
+      <a class="p-2 text-dark" routerLink="/dashboard">Productos</a>
+      <a class="p-2 text-dark" routerLink="/dashboard/proveedores">Proveedores</a>
+      <a class="p-2 text-dark" routerLink="/dashboard/categorias">Categorias</a>
+      <a class="p-2 text-dark" routerLink="/dashboard/cambiarPassword">Cambiar Password</a>
     </nav>
-    <a class="btn btn-primary" (click)="logOut()">
-      <i class="fas fa-sign-out-alt"></i>
-      Logout</a>
+    <a class="btn btn-outline-success" (click)="logOut()">LogOut</a>
 </div>

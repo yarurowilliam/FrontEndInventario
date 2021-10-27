@@ -44,10 +44,10 @@ const routes: Routes = [
     { path: 'nuevoArticulo', component: NuevoProductoComponent}
   ]},
   { path: 'ventas', component: VentasComponent, canActivate:[AuthGuard], children: [
-    { path: '', component: CajaComponent },
-    { path: 'nuevoCliente', component: NuevoClienteComponent },
-    { path: 'listaVentas', component: NuestrasVentasComponent },
-    { path: 'verDetallesVenta/:id', component: DetallesVentasComponent }
+    { path: '', component: CajaComponent},
+    { path: 'nuevoCliente', component: NuevoClienteComponent},
+    { path: 'listaVentas', component: NuestrasVentasComponent},
+    { path: 'verDetallesVenta/:id', component: DetallesVentasComponent}
   ]},
   { path: '**', redirectTo: '/inicio', pathMatch: 'full'}
 ];

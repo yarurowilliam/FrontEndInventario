@@ -12,4 +12,8 @@ export class BienvenidaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  anuncio(): void{
+    this.toastr.info('Ventas en construccion', 'ESTAMOS TRABAJANDO!');
+  }
+
 }

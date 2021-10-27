@@ -40,7 +40,6 @@ import { FiltroVentascPipe } from './pipe/filtro-ventasc.pipe';
 import { ListaArticulosComponent } from './components/ventas/caja/lista-articulos/lista-articulos.component';
 import { NuestrasVentasComponent } from './components/ventas/nuestras-ventas/nuestras-ventas.component';
 import { DetallesVentasComponent } from './components/ventas/nuestras-ventas/detalles-ventas/detalles-ventas.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -80,8 +79,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
     CommonModule,
-    FormsModule,
-    NgbModule
+    FormsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true }],
   bootstrap: [AppComponent]

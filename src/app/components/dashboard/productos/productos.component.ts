@@ -13,8 +13,6 @@ export class ProductosComponent implements OnInit {
   loading = false;
   nombreUsuario: string;
   rolU: string;
-  page = 1;
-  pageSize = 6;
 
   constructor(private loginService: LoginService,
     private articuloService: ArticuloService,
@@ -44,7 +42,7 @@ export class ProductosComponent implements OnInit {
   }
 
   eliminarArticulo(referencia: string): void {
-    if (confirm('Esta seguro que desea eliminar el articulo?')){
+    if (confirm('Esta seguro que desea eliminar el proveedor?')){
       this.loading = true;
       this.articuloService.deleteArticulo(referencia).subscribe(data =>{
         this.loading = false;
