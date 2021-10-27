@@ -23,11 +23,27 @@
 
 .panel-heading {
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .textomod {
     text-align: center;
     font-weight: bold;
+}
+
+.btnFinalizar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+
+.material-icons {
+    float: right;
+}
+
+.list-group-item {
+    padding: .20rem;
+    padding-left: 20px;
 }

@@ -1,0 +1,33 @@
+<form [formGroup]="datosDetalle"  >
+    <div class="botonesayuda">
+        <input formControlName="searchText"  [(ngModel)]="searchText" type="text" class="form-control" placeholder="CONSULTAR REFERENCIA O NOMBRE">
+    </div>
+    <table class='table table-dark table-hover' *ngIf='listArticulos && listArticulos.length'>
+        <thead>
+            <tr>
+            <tr>
+                <th>REFERENCIA</th>           
+                <th>NOMBRE</th>
+                <th>CANTIDAD</th>
+                <th>PRECIO</th>
+                <th>LLEVAR</th>
+                <th>AGREGAR</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let articulo of listArticulos | filtroVentasc:searchText;" (click)="getArticulo(articulo.referencia)">                
+            <td>{{articulo.referencia}}</td>
+            <td>{{articulo.nombre}}</td>
+            <td>{{articulo.cantidad}}</td>
+            <td>{{articulo.precio}}</td>
+            <td><input type="number" class="form-control" formControlName="cantidad"></td>
+            <td><button class="btn btn-success mr-2 btn-success" (click)="agregarArticulo(articulo.referencia)">AGREGAR</button></td>
+        </tr>
+    </tbody>
+    </table>
+    <div class="row botonesayuda">
+        <div class="col-sm-12">
+            <button class="btn btn-warning mr-1" (click)="getArticulos()" >Actualizar</button>
+        </div>
+</div>
+</form>

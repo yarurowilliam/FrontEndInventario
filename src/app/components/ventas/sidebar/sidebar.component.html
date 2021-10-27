@@ -6,6 +6,7 @@
     <nav class="my-2 my-md-0 mr-md-3">
       <a class="p-2 label" routerLink="/dashboard" routerLinkActive="active-link" *ngIf="validacionRol('ADMINISTRADOR')">Inventario</a>
       <a class="p-2 label" routerLink="/ventas" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+      <a class="p-2 text-dark" routerLink="/ventas/listaVentas" *ngIf="validacionRol('ADMINISTRADOR')">Lista de Ventas</a>
     </nav>
     <a class="btn btn-primary" (click)="logOut()">
       <i class="fas fa-sign-out-alt"></i>
