@@ -11,6 +11,8 @@ import { CategoriaService } from 'src/app/services/categoria.service';
 export class CategoriasComponent implements OnInit {
   listCategoria: Categoria[] = [];
   loading = false;
+  page = 1;
+  pageSize = 6;
 
   constructor(private categoriaService: CategoriaService,
     private toastr: ToastrService) { }
