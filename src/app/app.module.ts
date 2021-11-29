@@ -10,6 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
  //INTERCEPTORS
 import { AddTokenInterceptor } from '../app/helpers/add-token.interceptor';
 // Componentes
@@ -41,6 +42,11 @@ import { ListaArticulosComponent } from './components/ventas/caja/lista-articulo
 import { NuestrasVentasComponent } from './components/ventas/nuestras-ventas/nuestras-ventas.component';
 import { DetallesVentasComponent } from './components/ventas/nuestras-ventas/detalles-ventas/detalles-ventas.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UsuariosComponent } from './components/dashboard/usuarios/usuarios.component';
+import { RegproModalComponent } from './components/dashboard/proveedores/regpro-modal/regpro-modal.component';
+import { CambiarRolComponent } from './components/dashboard/usuarios/cambiar-rol/cambiar-rol.component';
+import { GestionarCompraComponent } from './components/dashboard/productos/gestionar-compra/gestionar-compra.component';
+import { DetalleGestionComponent } from './components/dashboard/productos/gestionar-compra/detalle-gestion/detalle-gestion.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +76,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FiltroVentascPipe,
     ListaArticulosComponent,
     NuestrasVentasComponent,
-    DetallesVentasComponent    
+    DetallesVentasComponent,
+    UsuariosComponent,
+    RegproModalComponent,
+    CambiarRolComponent,
+    GestionarCompraComponent,
+    DetalleGestionComponent    
   ],
   imports: [
     BrowserModule,
@@ -83,6 +94,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbModule
   ],
+  entryComponents:[RegproModalComponent],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })

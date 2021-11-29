@@ -4,11 +4,11 @@ import { ToastrService } from 'ngx-toastr';
 import { ArticuloService } from 'src/app/services/articulo.service';
 import { Location } from '@angular/common';
 @Component({
-  selector: 'app-producto',
-  templateUrl: './producto.component.html',
-  styleUrls: ['./producto.component.css']
+  selector: 'app-detalle-gestion',
+  templateUrl: './detalle-gestion.component.html',
+  styleUrls: ['./detalle-gestion.component.css']
 })
-export class ProductoComponent implements OnInit {
+export class DetalleGestionComponent implements OnInit {
 
   referencia: string;
   loading = false;
@@ -40,7 +40,7 @@ export class ProductoComponent implements OnInit {
     setTimeout(()=>{
       this.articuloService.updateCantidad(this.articulo).subscribe(data => {
         this.toastr.info(data.message);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard/gestionarCompra']);
       }, error => {
         this.loading = false;
         this.toastr.error(error.error.message, 'Error!');
@@ -51,4 +51,5 @@ export class ProductoComponent implements OnInit {
   goBack(): void {
     this.location.back;
   }
+
 }

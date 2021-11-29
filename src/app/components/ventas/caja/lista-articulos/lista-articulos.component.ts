@@ -36,7 +36,7 @@ export class ListaArticulosComponent implements OnInit {
   }
   getArticulos(): void {
     this.loading = true;
-    this.articuloService.getListArticulos().subscribe(data => {
+    this.articuloService.getListArticulosComprados().subscribe(data => {
       this.listArticulos = data;
       this.loading = false;
     }, error => {

@@ -46,7 +46,7 @@ export class NuevoProveedorComponent implements OnInit {
     setTimeout(()=>{
       this.proveedorService.guardarProveedor(proveedor).subscribe(data => {
         console.log(data);
-        this.toastr.success('El proveedor ' + proveedor.razonSocial + ' fue registrado con exito!', 'Proveedor Registrado!');
+        this.toastr.success(data.message, 'Proveedor Registrado!');
         this.router.navigate(['/dashboard/proveedores']);
         this.loading = false;
       }, error => {

@@ -27,4 +27,9 @@ export class CategoriaService {
   deleteCategoria(id: number): Observable<any> {
     return this.http.delete(this.myAppUrl + this.myApiUrl + id);
   }
+
+  getCategoria(id: number): Observable<any>{
+    return this.http.get(this.myAppUrl + this.myApiUrl + id);
+  }
+
 }

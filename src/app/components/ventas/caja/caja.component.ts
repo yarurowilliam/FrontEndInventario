@@ -25,6 +25,7 @@ export class CajaComponent implements OnInit {
   searchText: string;
   listDetalleVentas: DetalleVenta[] = [];
   articulo : Articulo;
+  total: number;
   constructor( private ventaService: VentaService,private articuloService: ArticuloService,private fb: FormBuilder, private clienteService: ClienteService, private toastr: ToastrService, private route: ActivatedRoute, private _router: Router) 
     {
         this.datosVenta = this.fb.group({
@@ -33,11 +34,18 @@ export class CajaComponent implements OnInit {
           searchText: ['']
         });
         this.prueba2 = false;
+        this.total=0;
 
      }
 
   ngOnInit(): void {
 
+  }
+
+  actualizar(){
+    this.listDetalleVentas.forEach(element=>{
+      this.total = this.total + element.precio;
+    });
   }
 
   get f() { return this.datosVenta.controls; }
@@ -61,6 +69,7 @@ export class CajaComponent implements OnInit {
       if(this.pruebaRef == element.referencia){
         this.devolverInventario(this.pruebaCant);
         this.listDetalleVentas.splice(index,1); 
+        this.total = this.total - element.precio;
       }else{
         this.toastr.error('Ese no fue el articulo que selecciono....', 'Error');
       }
@@ -70,7 +79,7 @@ export class CajaComponent implements OnInit {
 
   getArticulos(): void {
     this.loading = true;
-    this.articuloService.getListArticulos().subscribe(data => {
+    this.articuloService.getListArticulosComprados().subscribe(data => {
       this.listArticulos = data;
       this.loading = false;
     }, error => {

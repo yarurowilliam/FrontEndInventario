@@ -76,8 +76,8 @@ export class NuevoProductoComponent implements OnInit {
     setTimeout(()=>{
       this.articuloService.saveArticulo(articulo).subscribe(data => {
         console.log(data);
-        this.toastr.success('El articulo ' + articulo.nombre + ' fue registrado con exito!', 'Articulo Registrado!');
-        this.router.navigate(['/dashboard']);
+        this.toastr.success(data.message, 'Articulo Registrado!');
+        this.router.navigate(['/dashboard/gestionarCompra']);
         this.loading = false;
       }, error => {
         this.loading = false;

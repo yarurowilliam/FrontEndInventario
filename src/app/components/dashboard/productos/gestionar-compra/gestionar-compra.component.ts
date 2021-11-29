@@ -4,11 +4,12 @@ import { ToastrService } from 'ngx-toastr';
 import { Articulo } from 'src/app/models/articulo';
 import { ArticuloService } from 'src/app/services/articulo.service';
 @Component({
-  selector: 'app-productos',
-  templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.css']
+  selector: 'app-gestionar-compra',
+  templateUrl: './gestionar-compra.component.html',
+  styleUrls: ['./gestionar-compra.component.css']
 })
-export class ProductosComponent implements OnInit {
+export class GestionarCompraComponent implements OnInit {
+
   listArticulos: Articulo[] = [];
   loading = false;
   nombreUsuario: string;
@@ -24,7 +25,7 @@ export class ProductosComponent implements OnInit {
     this.getNombreUsuario();
     this.getArticulos();
   }
-
+  
   getNombreUsuario(): void{
     this.nombreUsuario = this.loginService.getTokenDecoded().sub;
     this.rolU = this.loginService.getTokenDecoded().sid;
@@ -33,7 +34,7 @@ export class ProductosComponent implements OnInit {
 
   getArticulos(): void {
     this.loading = true;
-    this.articuloService.getListArticulosComprados().subscribe(data => {
+    this.articuloService.GetListArticulosConNombres().subscribe(data => {
       this.listArticulos = data;
       this.loading = false;
     }, error => {
@@ -43,24 +44,8 @@ export class ProductosComponent implements OnInit {
     });
   }
 
-  eliminarArticulo(referencia: string): void {
-    if (confirm('Esta seguro que desea eliminar el articulo?')){
-      this.loading = true;
-      this.articuloService.deleteArticulo(referencia).subscribe(data =>{
-        this.loading = false;
-        this.toastr.success('El articulo fue eliminado con exito!', 'Registro eliminado');
-        this.getArticulos();
-      }, error => {
-        this.loading = false;
-        this.toastr.error('Opss.. ocurrio un error', 'Error');
-      });
-    }
-  }
-
   anuncio(): void{
     this.toastr.info('Ventas en construccion', 'ESTAMOS TRABAJANDO!');
   }
-
-
 
 }
