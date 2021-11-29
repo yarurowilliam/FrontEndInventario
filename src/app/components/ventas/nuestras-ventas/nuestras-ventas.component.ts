@@ -12,6 +12,8 @@ export class NuestrasVentasComponent implements OnInit {
   listaVentas: Venta[] = [];
   loading = false;
   searchText: string;
+  page = 1;
+  pageSize = 6;
   constructor(private ventaService: VentaService,
     private toastr: ToastrService) { }
 

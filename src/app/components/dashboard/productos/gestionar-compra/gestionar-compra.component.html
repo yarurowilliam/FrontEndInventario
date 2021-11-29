@@ -39,8 +39,8 @@
                             *ngFor="let articulo of listArticulos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
                             <td>{{ articulo.referencia}}</td>
                             <td>{{ articulo.nombre }}</td>
-                            <td>{{ articulo.cantidad }}</td>
-                            <td>{{ articulo.precio }}</td>
+                            <td class="numeros">{{ articulo.cantidad }}</td>
+                            <td class="numeros">{{ articulo.precio | currency: 'COP'  }}</td>
                             <td>{{ articulo.categoria }}</td>
                             <td>{{ articulo.proveedor }}</td>
                             <td>{{ articulo.estadoCompra}} </td>

@@ -56,6 +56,10 @@
 table.table tr th, table.table tr td {
     border-color: #e9e9e9;
 }
+
+table.table-striped tbody tr .numeros{
+    text-align: right;
+}
 table.table-striped tbody tr:nth-of-type(odd) {
     background-color: #fcfcfc;
 }
@@ -163,10 +167,6 @@ hr{
     color: black;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-  }
-
-  ::ng-deep .accordion button{
-    background-color: transparent
   }
 
   ::ng-deep .accordion button:hover{

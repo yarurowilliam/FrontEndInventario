@@ -55,3 +55,10 @@ strong, span{
     padding-top: 10px;
     float: left;
 }
+
+label{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: black;
+}

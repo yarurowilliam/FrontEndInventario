@@ -6,43 +6,43 @@
                     <div class="volver">
                         <i class="fas fa-arrow-left back" routerLink="/dashboard/gestionarCompra"></i>
                     </div>
-                    <h3 class="titulo">Gestion de Articulo</h3>
+                    <h3 class="titulo">Detalle artículo</h3>
                 </div>
             <app-loading *ngIf="loading"></app-loading>
                 <div class="form-row">
                     <div class="form-group col-md-6" style="text-align: start;">
-                        Referencia:
+                        <label>Referencia:</label>
                         <input type="text" class="form-control" placeholder="Ingrese referencia del articulo"
                         [(ngModel)]="articulo.referencia" readonly>
                     </div>
                     <div class="form-group col-md-6" style="text-align: start;">
-                        Nombre Producto:
+                        <label>Nombre Producto:</label>
                         <input type="text" class="form-control" placeholder="Ingrese nombre del articulo"
                         [(ngModel)]="articulo.nombre" readonly>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6" style="text-align: start;">
-                        Cantidad: <b>¿Nueva Cantidad?</b>
+                        <label>Cantidad: <b>¿Nueva Cantidad?</b></label>
                         <input type="number" class="form-control" placeholder="Ingrese la cantidad del articulo"
                         [(ngModel)]="articulo.cantidad">
                     </div>
                     <div class="form-group col-md-6" style="text-align: start;">
-                        Precio: <b>¿Nuevo Precio?</b> 
+                        <label>Precio: <b>¿Nuevo Precio?</b></label>
                         <input type="number" class="form-control" placeholder="Ingrese el precio del articulo"
                         [(ngModel)]="articulo.precio">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6" style="text-align: start;">
-                        <strong class="label">Estado:</strong>
+                        <label>Estado: </label>
                         <select [(ngModel)]="articulo.estadoCompra" class="form-control">
                             <option value="CANCELADO">Cancelada</option>
                             <option value="COMPRADO">Comprada</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6" style="text-align: start;">
-                        Precio de compra: 
+                        <label>Precio de compra:</label>
                         <input type="number" class="form-control" placeholder="Ingrese el precio del articulo"
                         [(ngModel)]="articulo.precioFinalCompra">
                     </div>

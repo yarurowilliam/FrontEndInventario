@@ -24,8 +24,8 @@
                 (click)="getArticulo(articulo.referencia)">
                 <td>{{articulo.referencia}}</td>
                 <td>{{articulo.nombre}}</td>
-                <td>{{articulo.cantidad}}</td>
-                <td>{{articulo.precio}}</td>
+                <td class="numeros">{{articulo.cantidad}}</td>
+                <td class="numeros">{{articulo.precio  | currency: 'COP' }}</td>
                 <td><input type="number" class="form-control" formControlName="cantidad"></td>
                 <td><button class="btn mr-2" style="background-color: #0066FF; color: white;"
                         (click)="agregarArticulo(articulo.referencia)">Agregar</button></td>
