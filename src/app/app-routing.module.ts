@@ -21,18 +21,20 @@ import { CajaComponent } from './components/ventas/caja/caja.component';
 import { ClienteComponent } from './components/ventas/cliente/cliente.component';
 import { NuevoClienteComponent } from './components/ventas/cliente/nuevo-cliente/nuevo-cliente.component';
 import { VentasComponent } from './components/ventas/ventas.component';
+import { UsuariosComponent } from './components/dashboard/usuarios/usuarios.component';
 //Guards
 import { AuthGuard } from './helpers/auth.guard';
+import { CambiarRolComponent } from './components/dashboard/usuarios/cambiar-rol/cambiar-rol.component';
 
 const routes: Routes = [
   { path:'',redirectTo: '/inicio' , pathMatch: 'full' },
   { path: 'inicio', component: InicioComponent, children: [
     { path: '',component: BienvenidaComponent },
-    { path: 'register',component: RegisterComponent },
     { path: 'login', component:LoginComponent }
   ]},
   { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard],data: { role: 'ADMINISTRADOR' } ,children: [
     { path: '', component: ProductosComponent},
+    { path: 'register',component: RegisterComponent },
     { path: 'cambiarPassword', component: CambiarPasswordComponent },
     { path: 'verProveedor/:nit', component: ProveedorComponent},
     { path: 'proveedores' , component: ProveedoresComponent },
@@ -41,7 +43,9 @@ const routes: Routes = [
     { path: 'categorias', component: CategoriasComponent},
     { path: 'nuevaCategoria', component: NuevaCategoriaComponent },
     { path: 'verArticulo/:referencia', component: ProductoComponent},
-    { path: 'nuevoArticulo', component: NuevoProductoComponent}
+    { path: 'nuevoArticulo', component: NuevoProductoComponent},
+    { path: 'gestionarUsuarios', component: UsuariosComponent},
+    { path: 'gestionarRol/:id', component: CambiarRolComponent }
   ]},
   { path: 'ventas', component: VentasComponent, canActivate:[AuthGuard], children: [
     { path: '', component: CajaComponent },

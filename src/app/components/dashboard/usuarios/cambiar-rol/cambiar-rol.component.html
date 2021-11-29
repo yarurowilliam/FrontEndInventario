@@ -1,0 +1,47 @@
+<div class="panel panel-primary"
+style="width: auto; margin:auto; margin-top: auto; background-color: rgba(255, 255, 255, 0.8)">
+<div class="panel-heading" style="background-color: lightblue;color: white;">Gestion de Roles</div>
+<div class="panel-body">
+    <div class="row separar">
+        <div class="col-sm-12">
+            <hr class="bg-info">
+            <div class="alert alert-warning">
+                <strong>¡Alerta!</strong> Cuidadito!
+            </div>
+            <app-loading *ngIf="loading"></app-loading>
+            <div *ngIf="usuario">   
+            <div class="row separar">
+                <div class="col-sm-2">
+                        <label>Usuario:</label>
+                </div>
+                <div class="col-sm-4">
+                        <input [(ngModel)]="usuario.nombreUsuario" readonly="readonly" class="form-control" placeholder="digite titulo"
+                        type="text" />
+                </div>
+
+                <div class="col-sm-2">
+                    <label>Cambiar Cargo:</label>
+                </div>
+                <div class="col-sm-4">
+                        <select [(ngModel)]="usuario.rolUser" class="form-control">
+                                <option value="ADMINISTRADOR">Administrador</option>
+                                <option value="TUTOR">Empleado</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="row botonesayuda">
+                <div class="col-sm-12">
+                        <button class="btn btn-success mr-3"(click)="update()" >Cambiar Rol</button>
+                        <button class="btn btn-secondary mr-3" routerLink="/dashboard/gestionarUsuarios">Volver</button>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+</div>
+</div>

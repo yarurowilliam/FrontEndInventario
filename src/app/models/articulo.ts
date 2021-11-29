@@ -5,4 +5,7 @@ export class Articulo{
     precio: number;
     categoriaId: number; 
     proveedorNit: string;
+    estadoCompra?:string;
+    precioFinalCompra ?: number;
+    comentarios ?: string;
 }

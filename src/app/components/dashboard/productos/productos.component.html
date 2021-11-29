@@ -27,6 +27,7 @@
                             <th>Referencia</th>
                             <th>Nombre</th>
                             <th>Cantidad</th>
+                            <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -36,6 +37,7 @@
                             <td>{{articulo.referencia}}</td>
                             <td>{{ articulo.nombre }}</td>
                             <td>{{ articulo.cantidad }}</td>
+                            <td>{{ articulo.estadoCompra}} </td>
                             <td>
                                 <a routerLink="/dashboard/verArticulo/{{ articulo.referencia }}" class="ver" title="Ver"
                                     data-toggle="tooltip"><i class="fas fa-eye"></i></a>
