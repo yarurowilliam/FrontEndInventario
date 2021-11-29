@@ -15,9 +15,11 @@ export class ListaArticulosComponent implements OnInit {
   datosDetalle: FormGroup;
   loading = false;
   ident : string;
-  listArticulos: Articulo[];
+  listArticulos: Articulo[] = [];
   searchText: string;
   articulo: Articulo;
+  page = 1;
+  pageSize = 6;
 
   @Output() enviarArticulo = new EventEmitter<DetalleVenta>();
   constructor( private articuloService: ArticuloService,private fb: FormBuilder, private toastr: ToastrService, private route: ActivatedRoute, private _router: Router) {

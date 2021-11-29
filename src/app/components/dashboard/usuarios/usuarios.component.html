@@ -1,4 +1,4 @@
-<a routerLink="/dashboard/nuevoProveedor" class="float">
+<a routerLink="/dashboard/register" class="float">
     <i class="fas fa-plus my-float"></i>
     </a>
 <div class="text-center" style="margin-top: -30px;">
@@ -11,7 +11,7 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-8">
-                            <h2>Consulta de proveedores</h2>
+                            <h2>Consulta de Usuarios</h2>
                         </div>
                         <div class="col-sm-4">
                             <div class="search-box">
@@ -24,31 +24,31 @@
                 <table class="table table-striped table-hover table-bordered">
                     <thead>
                         <tr>
-                            <th>NIT</th>
-                            <th>Razón social</th>
+                            <th>Id</th>
+                            <th>Usuario</th>
+                            <th>Rol</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr
-                            *ngFor="let proveedor of listProvedores | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-                            <td>{{proveedor.razonSocial}}</td>
-                            <td>{{proveedor.nit}}</td>
+                            *ngFor="let usuario of listUsuarios | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                            <td>{{usuario.id}}</td>
+                            <td>{{usuario.nombreUsuario}}</td>
+                            <td>{{usuario.rolUser}}</td>
                             <td>
-                                <a routerLink="/dashboard/verProveedor/{{ proveedor.nit }}" class="ver" title="Ver"
-                                    data-toggle="tooltip"><i class="fas fa-eye"></i></a>
-                                <a (click)="eliminarProveedor(proveedor.nit)" class="eliminar" title="Eliminar"
-                                    data-toggle="tooltip"><i class="fas fa-trash"></i></a>
+                                <a routerLink="/dashboard/gestionarRol/{{ usuario.id }}" class="ver" title="Ver"
+                                    data-toggle="tooltip"><i class="fas fa-cog"></i></a>
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="d-flex justify-content-end">
-                    <ngb-pagination [collectionSize]="listProvedores.length" [(page)]="page" [pageSize]="pageSize">
+                    <ngb-pagination [collectionSize]="listUsuarios.length" [(page)]="page" [pageSize]="pageSize">
                     </ngb-pagination>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<h3 *ngIf="listProvedores.length == 0 && loading == false">No hay proveedores para mostrar</h3>
+<h3 *ngIf="listUsuarios.length == 0 && loading == false">No hay usuarios para mostrar</h3>

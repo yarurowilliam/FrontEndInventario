@@ -12,7 +12,7 @@
             <form [formGroup]="datosProveedores" (ngSubmit)=registrarProveedor() style="padding-top: 10px;">
                 <div class="form-row">
                     <div class="form-group col-md-6" style="text-align: start;">
-                        <input type="text" class="form-control" placeholder="Ingrese nit o numero de documento"
+                        <input type="text" class="form-control" placeholder="Ingrese NIT o número de documento"
                             formControlName="nit">
                         <span class="text-danger ml-1"
                             *ngIf="datosProveedores.get('nit').hasError('required') && datosProveedores.get('nit').touched">
@@ -20,7 +20,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6" style="text-align: start;">
-                        <input type="text" class="form-control" placeholder="Ingrese Razon Social"
+                        <input type="text" class="form-control" placeholder="Ingrese Razón Social"
                             formControlName="razonSocial">
                         <span class="text-danger ml-1"
                             *ngIf="datosProveedores.get('razonSocial').hasError('required') && datosProveedores.get('razonSocial').touched">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6" style="text-align: start;">
-                        <input type="text" class="form-control" placeholder="Ingrese la direccion"
+                        <input type="text" class="form-control" placeholder="Ingrese la dirección"
                             formControlName="direccion">
                         <span class="text-danger ml-1"
                             *ngIf="datosProveedores.get('direccion').hasError('required') && datosProveedores.get('direccion').touched">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6" style="text-align: start;">
-                        <input type="text" class="form-control" placeholder="Ingrese el telefono del encargado"
+                        <input type="text" class="form-control" placeholder="Ingrese el teléfono del encargado"
                             formControlName="telefono">
                         <span class="text-danger ml-1"
                             *ngIf="datosProveedores.get('telefono').hasError('required') && datosProveedores.get('telefono').touched">

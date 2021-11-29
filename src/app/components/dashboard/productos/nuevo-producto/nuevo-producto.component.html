@@ -6,13 +6,17 @@
                     <div class="volver">
                         <i class="fas fa-arrow-left back" routerLink="/dashboard"></i>
                     </div>
+<<<<<<< Updated upstream
                     <h3 class="titulo">Registrar articulo</h3>
+=======
+                    <h3 class="titulo">Solicitar compra de artículo</h3>
+>>>>>>> Stashed changes
                 </div>
             <app-loading *ngIf="loading"></app-loading>
             <form [formGroup]="datosArticulos" (ngSubmit)=registrarArticulo() style="padding-top: 10px;">
                 <div class="form-row">
                     <div class="form-group col-md-6" style="text-align: start;">
-                        <input type="text" class="form-control" placeholder="Ingrese referencia del articulo"
+                        <input type="text" class="form-control" placeholder="Ingrese referencia del artículo"
                             formControlName="referencia">
                         <span class="text-danger ml-1"
                             *ngIf="datosArticulos.get('referencia').hasError('required') && datosArticulos.get('referencia').touched">
@@ -20,7 +24,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6" style="text-align: start;">
-                        <input type="text" class="form-control" placeholder="Ingrese nombre del articulo"
+                        <input type="text" class="form-control" placeholder="Ingrese nombre del artículo"
                             formControlName="nombre">
                         <span class="text-danger ml-1"
                             *ngIf="datosArticulos.get('nombre').hasError('required') && datosArticulos.get('nombre').touched">
@@ -30,7 +34,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6" style="text-align: start;">
-                        <input type="number" class="form-control" placeholder="Ingrese la cantidad del articulo"
+                        <input type="number" class="form-control" placeholder="Ingrese la cantidad del artículo"
                             formControlName="cantidad">
                         <span class="text-danger ml-1"
                             *ngIf="datosArticulos.get('cantidad').hasError('required') && datosArticulos.get('cantidad').touched">
@@ -38,7 +42,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6" style="text-align: start;">
-                        <input type="number" class="form-control" placeholder="Ingrese el precio del articulo"
+                        <input type="number" class="form-control" placeholder="Ingrese el precio del artículo"
                             formControlName="precio">
                         <span class="text-danger ml-1"
                             *ngIf="datosArticulos.get('precio').hasError('required') && datosArticulos.get('precio').touched">
@@ -48,7 +52,7 @@
                 </div>
                 
                 <div class="form-group" style="text-align: start;">
-                    <strong class="label">Categoria:</strong>
+                    <strong class="label">Categoría:</strong>
                     <select formControlName="categoriaId" class="form-control">
                         <option *ngFor="let categoria of listCategoria" value="{{categoria.id}}">
                             {{categoria.nombreCategoria}}</option>

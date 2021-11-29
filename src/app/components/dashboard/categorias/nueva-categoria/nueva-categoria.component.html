@@ -6,12 +6,12 @@
                     <div class="volver">
                         <i class="fas fa-arrow-left back" routerLink="/dashboard/categorias"></i>
                     </div>
-                    <h3 class="titulo">Registrar categoria</h3>
+                    <h3 class="titulo">Registrar categoría</h3>
                 </div>
                 <app-loading *ngIf="loading"></app-loading>
                 <form [formGroup]="datosCategorias" (ngSubmit)=registrarCategoria() style="padding-top: 10px;">
                     <div class="form-group" style="text-align: start;">
-                        <input type="text" class="form-control" placeholder="Ingrese nombre de la categoria"
+                        <input type="text" class="form-control" placeholder="Ingrese nombre de la categoría"
                             formControlName="nombreCategoria">
                         <span class="text-danger ml-1"
                             *ngIf="datosCategorias.get('nombreCategoria').hasError('required') && datosCategorias.get('nombreCategoria').touched">

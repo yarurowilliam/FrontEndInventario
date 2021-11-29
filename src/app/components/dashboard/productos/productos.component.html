@@ -1,5 +1,5 @@
 <a routerLink="/dashboard/nuevoArticulo" class="float">
-    <i class="fas fa-plus my-float"></i>
+    <label class="my-float">Solicitar</label>
     </a>
 <div class="text-center" style="margin-top: -30px;">
     <app-loading *ngIf="loading"></app-loading>
@@ -11,7 +11,11 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-8">
+<<<<<<< Updated upstream
                             <h2>Consulta de articulos</h2>
+=======
+                            <h2>Gestion de artículos</h2>
+>>>>>>> Stashed changes
                         </div>
                         <div class="col-sm-4">
                             <div class="search-box">
@@ -53,4 +57,8 @@
         </div>
     </div>
 </div>
+<<<<<<< Updated upstream
 <h3 *ngIf="listArticulos.length == 0 && loading == false">No hay articulos para mostrar</h3>
+=======
+<h3 *ngIf="listArticulos.length == 0 && loading == false">No hay artículos en el inventario, solicítalos ahora!</h3>
+>>>>>>> Stashed changes
