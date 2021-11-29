@@ -27,8 +27,9 @@ export class ArticuloService {
   getListArticulosComprados(): Observable<any>{
     return this.http.get(this.myAppUrl + this.myApiUrl + 'GetListArticulosComprados');
   }
-
-
+  GetListArticulosConNombres(): Observable<any>{
+    return this.http.get(this.myAppUrl + this.myApiUrl + 'GetListArticulosConNombres');
+  }
   deleteArticulo(referencia: string): Observable<any> {
     return this.http.delete(this.myAppUrl + this.myApiUrl + referencia);
   }

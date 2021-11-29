@@ -45,6 +45,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UsuariosComponent } from './components/dashboard/usuarios/usuarios.component';
 import { RegproModalComponent } from './components/dashboard/proveedores/regpro-modal/regpro-modal.component';
 import { CambiarRolComponent } from './components/dashboard/usuarios/cambiar-rol/cambiar-rol.component';
+import { GestionarCompraComponent } from './components/dashboard/productos/gestionar-compra/gestionar-compra.component';
+import { DetalleGestionComponent } from './components/dashboard/productos/gestionar-compra/detalle-gestion/detalle-gestion.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +79,9 @@ import { CambiarRolComponent } from './components/dashboard/usuarios/cambiar-rol
     DetallesVentasComponent,
     UsuariosComponent,
     RegproModalComponent,
-    CambiarRolComponent    
+    CambiarRolComponent,
+    GestionarCompraComponent,
+    DetalleGestionComponent    
   ],
   imports: [
     BrowserModule,

@@ -25,6 +25,8 @@ import { UsuariosComponent } from './components/dashboard/usuarios/usuarios.comp
 //Guards
 import { AuthGuard } from './helpers/auth.guard';
 import { CambiarRolComponent } from './components/dashboard/usuarios/cambiar-rol/cambiar-rol.component';
+import { GestionarCompraComponent } from './components/dashboard/productos/gestionar-compra/gestionar-compra.component';
+import { DetalleGestionComponent } from './components/dashboard/productos/gestionar-compra/detalle-gestion/detalle-gestion.component';
 
 const routes: Routes = [
   { path:'',redirectTo: '/inicio' , pathMatch: 'full' },
@@ -45,7 +47,9 @@ const routes: Routes = [
     { path: 'verArticulo/:referencia', component: ProductoComponent},
     { path: 'nuevoArticulo', component: NuevoProductoComponent},
     { path: 'gestionarUsuarios', component: UsuariosComponent},
-    { path: 'gestionarRol/:id', component: CambiarRolComponent }
+    { path: 'gestionarRol/:id', component: CambiarRolComponent },
+    { path: 'gestionarCompra', component: GestionarCompraComponent},
+    { path: 'detalleCompra/:id', component: DetalleGestionComponent}
   ]},
   { path: 'ventas', component: VentasComponent, canActivate:[AuthGuard], children: [
     { path: '', component: CajaComponent },
