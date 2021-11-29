@@ -49,7 +49,7 @@ const routes: Routes = [
     { path: 'gestionarUsuarios', component: UsuariosComponent},
     { path: 'gestionarRol/:id', component: CambiarRolComponent },
     { path: 'gestionarCompra', component: GestionarCompraComponent},
-    { path: 'detalleCompra/:id', component: DetalleGestionComponent}
+    { path: 'detalleCompra/:referencia', component: DetalleGestionComponent}
   ]},
   { path: 'ventas', component: VentasComponent, canActivate:[AuthGuard], children: [
     { path: '', component: CajaComponent },
