@@ -1,8 +1,4 @@
 <form [formGroup]="datosDetalle">
-    <!--<div class="botonesayuda">
-        <input formControlName="searchText" [(ngModel)]="searchText" type="text" class="form-control"
-            placeholder="CONSULTAR REFERENCIA O NOMBRE">
-    </div>-->
     <div class="search-box">
         <i class="fas fa-search"></i>
         <input formControlName="searchText" [(ngModel)]="searchText" type="text" class="form-control" placeholder="Buscar...">
@@ -36,9 +32,4 @@
         <ngb-pagination [collectionSize]="listArticulos.length" [(page)]="page" [pageSize]="pageSize">
         </ngb-pagination>
     </div>
-    <!--<div class="row botonesayuda">
-        <div class="col-sm-12">
-            <button class="btn btn-warning mr-1" (click)="getArticulos()">Actualizar</button>
-        </div>
-    </div>-->
 </form>

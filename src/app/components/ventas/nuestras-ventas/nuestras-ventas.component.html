@@ -1,63 +1,3 @@
-<!--<div class="panel panel-primary"
-    style="width: auto; margin:auto; margin-top: auto; background-color: rgba(255, 255, 255, 0.8);">
-    <div class="panel-heading" style="background-color:lightblue; color: white;">Mis Ventas</div>
-    <div class="panel-body">
-        <div class="row separar">
-            <div class="col-sm-12">
-                <hr class="bg-info">
-                <div class="alert alert-info">
-                    <strong>¡Informacion!</strong> ¡Sin novedades!
-                </div>
-                <div style="overflow-x:auto;">
-                    <div class="row separar">
-                        <div class="col-sm-2">
-                            <label>CONSULTAR VENTA:</label>
-                        </div>
-                        <div class="col-10">
-                            <input [(ngModel)]="searchText" type="text" class="form-control"
-                                placeholder="Consultar por identificacion o codigo venta">
-                        </div>
-                    </div>
-                    <table class='table table-striped' *ngIf='listaVentas && listaVentas.length'>
-                        <thead>
-                            <tr>
-                            <tr>
-                                <th>Venta ID</th>
-                                <th>Fecha de Venta</th>
-                                <th>Cliente</th>
-                                <th>Vendedor</th>
-                                <th>Total a Pagar</th>
-                                <th>Estado</th>
-                                <th>Ver</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let venta of listaVentas">
-                                <td>{{venta.id}}</td>
-                                <td>{{venta.fecha}}</td>
-                                <td>{{venta.clienteId}}</td>
-                                <td>{{venta.usuarioId}}</td>
-                                <td style="color: rgb(0, 124, 27);">${{venta.totalPagar}}</td>
-                                <th style="color: rgb(221, 24, 24);">{{venta.estadoVenta}}</th>
-                                <td><button type="button" class="btn btn-warning"
-                                        routerLink="/ventas/verDetallesVenta/{{venta.id}}">Detalles</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="row botonesayuda">
-                    <div class="col-sm-12">
-                        <button class="btn btn-warning mr-1" (click)="getCuestionarios()">Actualizar</button>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-</div>-->
-
 <div class="container">
     <div class="card shadow">
         <div class="table-responsive">
@@ -96,7 +36,7 @@
                             <td>{{venta.clienteId}}</td>
                             <td>{{venta.usuarioId}}</td>
                             <td class="numeros">{{ venta.totalPagar | currency: 'COP' }}</td>
-                            <td>{{ venta.estadoVenta}} </td>
+                            <td [ngClass]="venta.estadoVenta == estado ? 'vigente': 'vencida'">{{ venta.estadoVenta}} </td>
                             <td>
                                 <a routerLink="/ventas/verDetallesVenta/{{venta.id}}" class="ver" title="Ver"
                                     data-toggle="tooltip"><i class="fas fa-eye"></i></a>

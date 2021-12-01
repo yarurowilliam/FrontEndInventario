@@ -118,3 +118,11 @@ ngb-pagination ::ng-deep ul > li.active > a {
 .my-float{
 	margin-top:22px;
 }
+
+.administrador{
+    color: red;
+}
+
+.empleado{
+    color: blue;
+}

@@ -13,6 +13,7 @@ export class UsuariosComponent implements OnInit {
   loading = false;
   page = 1;
   pageSize = 6;
+  rol = "ADMINISTRADOR";
 
   constructor(private usuarioService : UsuarioService,
     private toastr: ToastrService) { }

@@ -43,7 +43,7 @@
                             <td class="numeros">{{ articulo.precio | currency: 'COP'  }}</td>
                             <td>{{ articulo.categoria }}</td>
                             <td>{{ articulo.proveedor }}</td>
-                            <td>{{ articulo.estadoCompra}} </td>
+                            <td [ngClass]="articulo.estadoCompra == estado ? 'comprado': 'pendiente'">{{ articulo.estadoCompra}} </td>
                             <td>
                                 <a routerLink="/dashboard/detalleCompra/{{ articulo.referencia }}" class="ver" title="Ver"
                                     data-toggle="tooltip"><i class="fas fa-cog"></i></a>

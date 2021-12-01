@@ -14,6 +14,8 @@ export class NuestrasVentasComponent implements OnInit {
   searchText: string;
   page = 1;
   pageSize = 6;
+  estado = "VIGENTE";
+
   constructor(private ventaService: VentaService,
     private toastr: ToastrService) { }
 

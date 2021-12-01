@@ -35,7 +35,7 @@
                             *ngFor="let usuario of listUsuarios | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
                             <td>{{usuario.id}}</td>
                             <td>{{usuario.nombreUsuario}}</td>
-                            <td>{{usuario.rolUser}}</td>
+                            <td [ngClass]="usuario.rolUser == rol ? 'administrador': 'empleado'">{{usuario.rolUser}}</td>
                             <td>
                                 <a routerLink="/dashboard/gestionarRol/{{ usuario.id }}" class="ver" title="Ver"
                                     data-toggle="tooltip"><i class="fas fa-cog"></i></a>

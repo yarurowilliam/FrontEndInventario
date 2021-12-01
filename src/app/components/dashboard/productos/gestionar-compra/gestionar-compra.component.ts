@@ -16,6 +16,7 @@ export class GestionarCompraComponent implements OnInit {
   rolU: string;
   page = 1;
   pageSize = 6;
+  estado = "COMPRADO";
 
   constructor(private loginService: LoginService,
     private articuloService: ArticuloService,

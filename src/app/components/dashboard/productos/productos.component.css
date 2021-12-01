@@ -126,3 +126,11 @@ ngb-pagination ::ng-deep ul > li.active > a {
     margin: 0;
     cursor: pointer;
 }
+
+.pendiente{
+    color: red;
+}
+
+.comprado{
+    color: green;
+}

@@ -47,6 +47,7 @@ import { RegproModalComponent } from './components/dashboard/proveedores/regpro-
 import { CambiarRolComponent } from './components/dashboard/usuarios/cambiar-rol/cambiar-rol.component';
 import { GestionarCompraComponent } from './components/dashboard/productos/gestionar-compra/gestionar-compra.component';
 import { DetalleGestionComponent } from './components/dashboard/productos/gestionar-compra/detalle-gestion/detalle-gestion.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { DetalleGestionComponent } from './components/dashboard/productos/gestio
     RegproModalComponent,
     CambiarRolComponent,
     GestionarCompraComponent,
-    DetalleGestionComponent    
+    DetalleGestionComponent,
+    ReportesComponent    
   ],
   imports: [
     BrowserModule,
