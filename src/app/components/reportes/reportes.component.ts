@@ -17,6 +17,7 @@ export class ReportesComponent implements OnInit {
   totalGastado: number;
   totalGanancias: number;
   mejorCliente : string;
+  perdidasTotales: number;
   constructor(private articuloService: ArticuloService,
     private ventaService: VentaService,
     private toastr: ToastrService) { }
@@ -61,6 +62,16 @@ export class ReportesComponent implements OnInit {
       this.toastr.error('Opss.. ocurrio un error', 'Error');
     });
   }
-
+  reportGasto : number;
+  getTotalPerdidas(): string {
+    this.perdidasTotales = this.totalGastado - this.totalGanancias;
+    if (this.perdidasTotales <= 0 ){
+      this.reportGasto = 0;
+      return "No hay perdidas"
+    }else{
+      this.reportGasto = this.perdidasTotales;
+      return "Perdida";
+    }
+  }
 
 }
