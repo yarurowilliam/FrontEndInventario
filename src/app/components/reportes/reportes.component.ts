@@ -19,11 +19,11 @@ export class ReportesComponent implements OnInit {
   loading = false;
   totalGastado: number;
   totalGanancias: number;
-  mejorCliente : string;
   perdidasTotales: number;
   mejorArticulo : string;
   mejorVenta: any = {};
   peorVenta: any = {};
+  mejorCliente: any = {};
   constructor(private articuloService: ArticuloService,
     private ventaService: VentaService,
     private detalleVentaService: DetalleVentaService,
