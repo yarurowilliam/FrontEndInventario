@@ -148,6 +148,7 @@ export class CajaComponent implements OnInit {
       this.toastr.success('La  venta se registro exitosamente','Venta Registrada');
       this.datosVenta.reset();
       this.listDetalleVentas = [];
+      this.total=0;
       this.loading = false;
     }, error => {
       this.toastr.error(error.error.message, 'Error!');

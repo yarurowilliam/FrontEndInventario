@@ -42,4 +42,8 @@ export class ArticuloService {
     return this.http.put(this.myAppUrl + this.myApiUrl + articulo.referencia, articulo);
   }
 
+  traerTotalGastos(): Observable<any> {
+    return this.http.get(this.myAppUrl + this.myApiUrl + 'TraerTotalGastos');
+  }
+
 }
