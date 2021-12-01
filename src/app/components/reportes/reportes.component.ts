@@ -16,6 +16,7 @@ export class ReportesComponent implements OnInit {
   loading = false;
   totalGastado: number;
   totalGanancias: number;
+  mejorCliente : string;
   constructor(private articuloService: ArticuloService,
     private ventaService: VentaService,
     private toastr: ToastrService) { }
@@ -23,6 +24,7 @@ export class ReportesComponent implements OnInit {
   ngOnInit(): void {
     this.traerCostos(); 
     this.traerGanancias();
+    this.getMejorCliente();
   }
 
   traerCostos(): void {
@@ -41,6 +43,17 @@ export class ReportesComponent implements OnInit {
     this.loading = true;
     this.ventaService.traerGanancias().subscribe(data => {
       this.totalGanancias = data;
+      this.loading = false;
+    }, error => {
+      console.log(error);
+      this.loading = false;
+      this.toastr.error('Opss.. ocurrio un error', 'Error');
+    });
+  }
+  getMejorCliente(): void {
+    this.loading = true;
+    this.ventaService.getMejorCliente().subscribe(data => {
+      this.mejorCliente = data;
       this.loading = false;
     }, error => {
       console.log(error);

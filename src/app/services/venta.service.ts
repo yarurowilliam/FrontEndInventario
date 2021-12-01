@@ -31,4 +31,8 @@ export class VentaService {
   traerGanancias(): Observable<any> {
     return this.http.get(this.myAppUrl + this.myApiUrl + 'TraerGanancias');
   }
+
+  getMejorCliente(): Observable<any> {
+    return this.http.get(this.myAppUrl + this.myApiUrl + 'GetMejorCliente');
+  }
 }
