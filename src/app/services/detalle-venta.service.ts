@@ -20,5 +20,10 @@ export class DetalleVentaService {
     return this.http.get(this.myAppUrl + this.myApiUrl + 'ArticuloMasVendido');
   }
 
+  
+  getMenorProducto(): Observable<any>{
+    return this.http.get(this.myAppUrl + this.myApiUrl + 'ArticuloMenosVendido');
+  }
+
 
 }

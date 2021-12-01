@@ -23,6 +23,7 @@ export class ReportesComponent implements OnInit {
   perdidasTotales: number;
   mejorArticulo : string;
   mejorVenta: any = {};
+  peorVenta: any = {};
   constructor(private articuloService: ArticuloService,
     private ventaService: VentaService,
     private detalleVentaService: DetalleVentaService,
@@ -33,6 +34,7 @@ export class ReportesComponent implements OnInit {
     this.traerGanancias();
     this.getMejorCliente();
     this.getMejorVenta();
+    this.getPeorVenta();
   }
 
   traerCostos(): void {
@@ -88,6 +90,15 @@ export class ReportesComponent implements OnInit {
     this.detalleVentaService.getMejorProducto().subscribe(data => {
       this.loading = false;
       this.mejorVenta = data;
+      console.log(data);
+    });
+  }
+
+  getPeorVenta(): void {
+    this.loading = true;
+    this.detalleVentaService.getMenorProducto().subscribe(data => {
+      this.loading = false;
+      this.peorVenta = data;
       console.log(data);
     });
   }
