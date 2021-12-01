@@ -13,12 +13,14 @@ export class ClientesComponent implements OnInit {
   page = 1;
   pageSize = 6;
   estado = "ACTIVO";
+  searchText: string;
   constructor(private clienteService: ClienteService,
     private toastr: ToastrService) { }
 
 
   ngOnInit(): void {
     this.getClientes();
+    this.searchText = "";
   }
 
   

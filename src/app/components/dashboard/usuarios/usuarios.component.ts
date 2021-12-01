@@ -14,12 +14,14 @@ export class UsuariosComponent implements OnInit {
   page = 1;
   pageSize = 6;
   rol = "ADMINISTRADOR";
+  searchText: string;
 
   constructor(private usuarioService : UsuarioService,
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getUsuarios();
+    this.searchText = "";
   }
 
   getUsuarios(): void {

@@ -16,7 +16,7 @@
                         <div class="col-sm-4">
                             <div class="search-box">
                                 <i class="fas fa-search"></i>
-                                <input type="text" class="form-control" placeholder="Buscar...">
+                                <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Buscar...">
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                     </thead>
                     <tbody>
                         <tr
-                            *ngFor="let articulo of listArticulos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                            *ngFor="let articulo of listArticulos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize| filtroProductoc:searchText;">
                             <td>{{ articulo.referencia}}</td>
                             <td>{{ articulo.nombre }}</td>
                             <td class="numeros">{{ articulo.cantidad }}</td>

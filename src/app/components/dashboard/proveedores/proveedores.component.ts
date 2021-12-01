@@ -13,12 +13,14 @@ export class ProveedoresComponent implements OnInit {
   loading = false;
   page = 1;
   pageSize = 6;
-  
+  searchText: string;
+
   constructor(private proveedorService: ProveedorService,
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getProveedores();
+    this.searchText = "";
   }
 
 

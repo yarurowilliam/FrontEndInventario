@@ -16,7 +16,7 @@
                         <div class="col-sm-4">
                             <div class="search-box">
                                 <i class="fas fa-search"></i>
-                                <input type="text" class="form-control" placeholder="Buscar...">
+                                <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Buscar...">
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                     </thead>
                     <tbody>
                         <tr
-                            *ngFor="let proveedor of listProvedores | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                            *ngFor="let proveedor of listProvedores | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize| filtroProveedor:searchText;">
                             <td>{{proveedor.razonSocial}}</td>
                             <td>{{proveedor.nit}}</td>
                             <td>

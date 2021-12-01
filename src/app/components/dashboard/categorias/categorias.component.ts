@@ -13,13 +13,14 @@ export class CategoriasComponent implements OnInit {
   loading = false;
   page = 1;
   pageSize = 6;
-
+  searchText: string;
   constructor(private categoriaService: CategoriaService,
     private toastr: ToastrService) { }
 
 
   ngOnInit(): void {
     this.getCategorias();
+    this.searchText = "";
   }
 
     

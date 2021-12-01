@@ -17,6 +17,7 @@ export class GestionarCompraComponent implements OnInit {
   page = 1;
   pageSize = 6;
   estado = "COMPRADO";
+  searchText: string;
 
   constructor(private loginService: LoginService,
     private articuloService: ArticuloService,
@@ -25,6 +26,7 @@ export class GestionarCompraComponent implements OnInit {
   ngOnInit(): void {
     this.getNombreUsuario();
     this.getArticulos();
+    this.searchText = "";
   }
   
   getNombreUsuario(): void{

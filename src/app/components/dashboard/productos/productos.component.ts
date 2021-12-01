@@ -16,14 +16,17 @@ export class ProductosComponent implements OnInit {
   page = 1;
   pageSize = 6;
   estado = "COMPRADO";
-
+  searchText: string;
   constructor(private loginService: LoginService,
     private articuloService: ArticuloService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService) {
+      
+     }
 
   ngOnInit(): void {
     this.getNombreUsuario();
     this.getArticulos();
+    this.searchText = "";
   }
 
   getNombreUsuario(): void{

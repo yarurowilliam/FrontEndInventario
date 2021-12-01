@@ -13,7 +13,7 @@
                         <div class="col-sm-4">
                             <div class="search-box">
                                 <i class="fas fa-search"></i>
-                                <input type="text" class="form-control" placeholder="Buscar...">
+                                <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Buscar...">
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                     </thead>
                     <tbody>
                         <tr
-                            *ngFor="let cliente of listClientes | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                            *ngFor="let cliente of listClientes | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize | filtroCliente:searchText;">
                             <td>{{ cliente.identificacion }}</td>
                             <td>{{ cliente.nombre }}</td>
                             <td>{{ cliente.apellido }}</td>

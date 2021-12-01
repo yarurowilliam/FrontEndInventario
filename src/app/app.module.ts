@@ -50,6 +50,11 @@ import { DetalleGestionComponent } from './components/dashboard/productos/gestio
 import { ReportesComponent } from './components/reportes/reportes.component';
 import { ClientesComponent } from './components/dashboard/clientes/clientes.component';
 import { DetalleClienteComponent } from './components/dashboard/clientes/detalle-cliente/detalle-cliente.component';
+import { FiltroProductocPipe } from './pipe/filtro-productoc.pipe';
+import { FiltroProveedorPipe } from './pipe/filtro-proveedor.pipe';
+import { FiltroCategoriaPipe } from './pipe/filtro-categoria.pipe';
+import { FiltroUsuarioPipe } from './pipe/filtro-usuario.pipe';
+import { FiltroClientePipe } from './pipe/filtro-cliente.pipe';
 
 @NgModule({
   declarations: [
@@ -87,7 +92,12 @@ import { DetalleClienteComponent } from './components/dashboard/clientes/detalle
     DetalleGestionComponent,
     ReportesComponent,
     ClientesComponent,
-    DetalleClienteComponent    
+    DetalleClienteComponent,
+    FiltroProductocPipe,
+    FiltroProveedorPipe,
+    FiltroCategoriaPipe,
+    FiltroUsuarioPipe,
+    FiltroClientePipe    
   ],
   imports: [
     BrowserModule,
