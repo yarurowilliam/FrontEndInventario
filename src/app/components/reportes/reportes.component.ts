@@ -4,6 +4,9 @@ import { ToastrService } from 'ngx-toastr';
 import { Articulo } from 'src/app/models/articulo';
 import { ArticuloService } from 'src/app/services/articulo.service';
 import { VentaService } from 'src/app/services/venta.service';
+import { DetalleVentaService } from 'src/app/services/detalle-venta.service';
+
+
 @Component({
   selector: 'app-reportes',
   templateUrl: './reportes.component.html',
@@ -18,14 +21,18 @@ export class ReportesComponent implements OnInit {
   totalGanancias: number;
   mejorCliente : string;
   perdidasTotales: number;
+  mejorArticulo : string;
+  mejorVenta: any = {};
   constructor(private articuloService: ArticuloService,
     private ventaService: VentaService,
+    private detalleVentaService: DetalleVentaService,
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.traerCostos(); 
     this.traerGanancias();
     this.getMejorCliente();
+    this.getMejorVenta();
   }
 
   traerCostos(): void {
@@ -51,6 +58,7 @@ export class ReportesComponent implements OnInit {
       this.toastr.error('Opss.. ocurrio un error', 'Error');
     });
   }
+
   getMejorCliente(): void {
     this.loading = true;
     this.ventaService.getMejorCliente().subscribe(data => {
@@ -62,6 +70,7 @@ export class ReportesComponent implements OnInit {
       this.toastr.error('Opss.. ocurrio un error', 'Error');
     });
   }
+
   reportGasto : number;
   getTotalPerdidas(): string {
     this.perdidasTotales = this.totalGastado - this.totalGanancias;
@@ -73,5 +82,15 @@ export class ReportesComponent implements OnInit {
       return "Perdida";
     }
   }
+
+  getMejorVenta(): void {
+    this.loading = true;
+    this.detalleVentaService.getMejorProducto().subscribe(data => {
+      this.loading = false;
+      this.mejorVenta = data;
+      console.log(data);
+    });
+  }
+
 
 }
