@@ -27,4 +27,8 @@ export class VentaService {
   getListVentas(): Observable<any>{
     return this.http.get(this.myAppUrl + this.myApiUrl + 'GetListVentas');
   }
+
+  traerGanancias(): Observable<any> {
+    return this.http.get(this.myAppUrl + this.myApiUrl + 'TraerGanancias');
+  }
 }
