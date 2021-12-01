@@ -48,6 +48,8 @@ import { CambiarRolComponent } from './components/dashboard/usuarios/cambiar-rol
 import { GestionarCompraComponent } from './components/dashboard/productos/gestionar-compra/gestionar-compra.component';
 import { DetalleGestionComponent } from './components/dashboard/productos/gestionar-compra/detalle-gestion/detalle-gestion.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
+import { ClientesComponent } from './components/dashboard/clientes/clientes.component';
+import { DetalleClienteComponent } from './components/dashboard/clientes/detalle-cliente/detalle-cliente.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +85,9 @@ import { ReportesComponent } from './components/reportes/reportes.component';
     CambiarRolComponent,
     GestionarCompraComponent,
     DetalleGestionComponent,
-    ReportesComponent    
+    ReportesComponent,
+    ClientesComponent,
+    DetalleClienteComponent    
   ],
   imports: [
     BrowserModule,

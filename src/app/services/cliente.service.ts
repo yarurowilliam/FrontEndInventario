@@ -29,7 +29,7 @@ export class ClienteService {
     return this.http.get(this.myAppUrl + this.myApiUrl + identificacion);
   }
 
-  modificarCliente(identificacion: string): Observable<any>{
-    return this.http.put(this.myAppUrl+this.myApiUrl,identificacion);
+  modificarCliente(cliente: Cliente): Observable<any>{
+    return this.http.put(this.myAppUrl+this.myApiUrl+cliente.identificacion,cliente);
   }
 }
